@@ -1,0 +1,6 @@
+<h1>Towns</h1>
+
+<% visualization "chart_id", "ScatterChart", :width => 1024, :height => 1024, :html => {:class => "graph_class"} do |chart| %>
+
+  <% chart.add_rows(@x_values) %>
+<% end %>

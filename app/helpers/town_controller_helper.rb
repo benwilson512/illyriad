@@ -1,0 +1,2 @@
+module TownControllerHelper
+end

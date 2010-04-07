@@ -1,0 +1,669 @@
+  [4;36;1mSQL (3.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 12:56:48) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (101.9ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 12:57:56) [GET]
+
+ActionController::RoutingError (No route matches "/users/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PlayersController#index (for 127.0.0.1 at 2010-04-07 12:57:59) [GET]
+  [4;35;1mPlayer Load (33.4ms)[0m   [0mSELECT * FROM `players` [0m
+Rendering template within layouts/players
+Rendering players/index
+  [4;36;1mPlayer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `players`[0m
+  [4;35;1mAlliance Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `alliances`[0m
+  [4;36;1mAlliance Load (0.6ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 1) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mAlliance Load (0.2ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 8) [0m
+  [4;36;1mAlliance Load (0.2ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 12) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mAlliance Load (0.2ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 8) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 8) [0m
+  [4;36;1mAlliance Load (0.2ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 16) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mAlliance Load (0.2ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 17) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 17) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 16) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 20) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 16) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mAlliance Load (0.4ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mAlliance Load (0.3ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 11) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 18) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mAlliance Load (0.3ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 28) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mAlliance Load (0.2ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 29) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 27) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 21) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 26) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `alliances` WHERE (`alliances`.`id` = 10) [0m
+Completed in 1803ms (View: 1668, DB: 51) | 200 OK [http://localhost/players/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlliancesController#index (for 127.0.0.1 at 2010-04-07 12:58:05) [GET]
+  [4;36;1mAlliance Load (0.4ms)[0m   [0;1mSELECT * FROM `alliances` [0m
+Rendering template within layouts/application
+Rendering alliances/index
+  [4;35;1mAlliance Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `alliances`[0m
+  [4;36;1mPlayer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `players`[0m
+  [4;35;1mSQL (4.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 1) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 2) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 3) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 4) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 5) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 6) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 7) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 8) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 9) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 10) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 11) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 12) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 13) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 14) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 15) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 16) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 17) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 18) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 19) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 20) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 21) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 22) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 23) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 24) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 25) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 26) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 27) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 28) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 29) [0m
+
+ActionView::TemplateError (undefined local variable or method `include_visualization_api' for #<ActionView::Base:0x19f206c>) on line #4 of app/views/layouts/application.html.erb:
+1: <html>
+2:   <head>
+3:     <title>Test app</title>
+4:     <%= include_visualization_api %>
+5:     <%= render_visualizations %>
+6:     <%= yield :head %>
+7:   </head>
+
+    app/views/layouts/application.html.erb:4
+
+Rendered rescues/_trace (46.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlliancesController#index (for 127.0.0.1 at 2010-04-07 12:58:30) [GET]
+  [4;35;1mAlliance Load (0.4ms)[0m   [0mSELECT * FROM `alliances` [0m
+Rendering template within layouts/application
+Rendering alliances/index
+  [4;36;1mAlliance Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `alliances`[0m
+  [4;35;1mPlayer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `players`[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 1) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 2) [0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 3) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 4) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 5) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 6) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 7) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 8) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 9) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 10) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 11) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 12) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 13) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 14) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 15) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 16) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 17) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 18) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 19) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 20) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 21) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 22) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 23) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 24) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 25) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 26) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 27) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 28) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 29) [0m
+Completed in 118ms (View: 37, DB: 76) | 200 OK [http://localhost/alliances/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlliancesController#index (for 127.0.0.1 at 2010-04-07 12:58:31) [GET]
+  [4;36;1mAlliance Load (0.4ms)[0m   [0;1mSELECT * FROM `alliances` [0m
+Rendering template within layouts/application
+Rendering alliances/index
+  [4;35;1mAlliance Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `alliances`[0m
+  [4;36;1mPlayer Columns (25.1ms)[0m   [0;1mSHOW FIELDS FROM `players`[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 1) [0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 2) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 3) [0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 4) [0m
+  [4;35;1mSQL (3.7ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 5) [0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 6) [0m
+  [4;35;1mSQL (3.7ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 7) [0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 8) [0m
+  [4;35;1mSQL (3.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 9) [0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 10) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 11) [0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 12) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 13) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 14) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 15) [0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 16) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 17) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 18) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 19) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 20) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 21) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 22) [0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 23) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 24) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 25) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 26) [0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 27) [0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 28) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 29) [0m
+Completed in 177ms (View: 42, DB: 129) | 200 OK [http://localhost/alliances/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlliancesController#index (for 127.0.0.1 at 2010-04-07 12:58:31) [GET]
+  [4;35;1mAlliance Load (0.4ms)[0m   [0mSELECT * FROM `alliances` [0m
+Rendering template within layouts/application
+Rendering alliances/index
+  [4;36;1mAlliance Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `alliances`[0m
+  [4;35;1mPlayer Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `players`[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 1) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 2) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 3) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 4) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 5) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 6) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 7) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 8) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 9) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 10) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 11) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 12) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 13) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 14) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 15) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 16) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 17) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 18) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 19) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 20) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 21) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 22) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 23) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 24) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 25) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 26) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 27) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 28) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 29) [0m
+Completed in 218ms (View: 134, DB: 79) | 200 OK [http://localhost/alliances/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlliancesController#index (for 127.0.0.1 at 2010-04-07 13:00:41) [GET]
+  [4;36;1mAlliance Load (0.5ms)[0m   [0;1mSELECT * FROM `alliances` [0m
+Rendering template within layouts/application
+Rendering alliances/index
+  [4;35;1mAlliance Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `alliances`[0m
+  [4;36;1mPlayer Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `players`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 1) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 2) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 3) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 4) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 5) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 6) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 7) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 8) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 9) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 10) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 11) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 12) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 13) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 14) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 15) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 16) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 17) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 18) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 19) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 20) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 21) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 22) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 23) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 24) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 25) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 26) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 27) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 28) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 29) [0m
+Completed in 127ms (View: 44, DB: 77) | 200 OK [http://localhost/alliances/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlliancesController#index (for 127.0.0.1 at 2010-04-07 13:11:33) [GET]
+  [4;35;1mAlliance Load (0.4ms)[0m   [0mSELECT * FROM `alliances` [0m
+Rendering template within layouts/application
+Rendering alliances/index
+  [4;36;1mAlliance Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `alliances`[0m
+  [4;35;1mPlayer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `players`[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 1) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 2) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 3) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 4) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 5) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 6) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 7) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 8) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 9) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 10) [0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 11) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 12) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 13) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 14) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 15) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 16) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 17) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 18) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 19) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 20) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 21) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 22) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 23) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 24) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 25) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 26) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 27) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 28) [0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `players` WHERE (`players`.alliance_id = 29) [0m
+Completed in 113ms (View: 32, DB: 76) | 200 OK [http://localhost/alliances/]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 13:11:45) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 13:28:19) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (127.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 13:35:03) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTown Columns (8.8ms)[0m   [0mSHOW FIELDS FROM `towns`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTown Columns (4.8ms)[0m   [0mSHOW FIELDS FROM `towns`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTown Load (0.4ms)[0m   [0mSELECT * FROM `towns` LIMIT 1[0m
+  [4;36;1mTown Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `towns`[0m
+  [4;35;1mTown Load (0.6ms)[0m   [0mSELECT * FROM `towns` LIMIT 1[0m
+  [4;36;1mTown Load (0.4ms)[0m   [0;1mSELECT * FROM `towns` WHERE (`towns`.`id` = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTown Load (0.5ms)[0m   [0;1mSELECT * FROM `towns` LIMIT 1[0m
+  [4;35;1mTown Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `towns`[0m
+  [4;36;1mTown Load (0.6ms)[0m   [0;1mSELECT * FROM `towns` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 13:52:29) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 14:00:36) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (116.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 17:40:39) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-07 18:30:34) [GET]
+
+NameError (uninitialized constant Google):
+  app/controllers/towns_controller.rb:2
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
