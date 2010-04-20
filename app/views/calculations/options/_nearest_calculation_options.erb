@@ -1,0 +1,10 @@
+<%= form_tag results_calculation_path(@calculation), :method => :get %>
+
+<p><label>Maximum Time (Hours) </label><%= text_field_tag :time %></p>
+<p><label>Slowest Unit Speed in Army </label><%= text_field_tag :speed %></p>
+<p><label>Desired alliances. Separate by commas, leave blank for all </label><%= text_field_tag :alliances %></p>
+<%= hidden_field_tag :calculation_type, "NearestCalculation" %>
+<%= hidden_field_tag :town_id, params[:town_id] %>
+<%= submit_tag :submit %>
+
+</form>

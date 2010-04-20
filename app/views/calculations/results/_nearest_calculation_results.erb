@@ -1,0 +1,22 @@
+<% cache(:key => Digest::SHA1.hexdigest(params.to_s)) do %>
+<% unless @report_items.blank? %>
+  <table>
+    <tr>
+      <th>Town Name</th>
+      <th>Town Owner</th>
+      <th>Population</th>
+      <th>Alliance</th>
+      <th>Time</th>
+    </tr>
+  <% @report_items.each do |report_item| %>
+    <tr>
+      <td><%= link_to report_item[:town].name, town_path(report_item[:town]) %></td>
+      <td><%= link_to report_item[:town].player.name, player_path(report_item[:town].player) %></td>
+      <td><%= report_item[:town].population %></td>
+      <td><%= report_item[:town].player.alliance ? link_to(report_item[:town].player.alliance.name, alliance_path(report_item[:town].player.alliance)) : "No Alliance" %></td>
+      <th><%= report_item[:time] %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+<% end %>

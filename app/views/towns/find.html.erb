@@ -1,0 +1,14 @@
+Select Owner
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Alliance</th>
+  </tr>
+<% @towns.each do |town| %>
+  <tr>
+    <td><%= town.name %></td>
+    <td><%= town.player.alliance ? link_to(town.player.alliance.name, alliance_path(town.player.alliance)) : "N/A" %></td>
+    <td><%= link_to "Select", town_path(town) %></td>
+  </tr>
+<% end %>
+</table>

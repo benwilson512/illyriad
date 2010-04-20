@@ -7,6 +7,7 @@ class PlayersController < ApplicationController
   
   def show
     @alliance = @player.alliance
+    @towns = @player.towns.all
   end
   
   private

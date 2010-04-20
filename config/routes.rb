@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :players
   map.resources :alliances
-  map.resources :towns
-  map.resources :home
+  map.resources :towns, :collection => [:find], :member => [:nearest]
+  map.resources :map
+  map.resources :calculations, :member => [:options, :results]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

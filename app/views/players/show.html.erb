@@ -1,3 +1,18 @@
-<p>Name: <%= @player.name %></p>
+<h1><%= @player.name %></h1>
 <p>Race: <%= @player.race %></p>
 <p>Alliance: <%= link_to @alliance.name, @alliance %></p>
+
+<h2>Towns</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Population</th>
+  </tr>
+<% @towns.each do |town| %>
+  <tr>
+    <td><%= town.name %></td>
+    <td><%= town.population %></td>
+    <td><%= link_to "view", town_path(town) %></td>
+  </tr>
+<% end %>
+</table>

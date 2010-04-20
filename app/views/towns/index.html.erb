@@ -1,6 +1,12 @@
-<h1>Towns</h1>
-
-<% visualization "chart_id", "ScatterChart", :width => 1024, :height => 1024, :html => {:class => "graph_class"} do |chart| %>
-
-  <% chart.add_rows(@x_values) %>
-<% end %>
+<h1>Search for a Town</h1>
+<h2>By Coordinates</h2>
+<%= form_tag find_towns_path, :method => :get %>
+X: <%= text_field_tag :x_field %>
+Y: <%= text_field_tag :y_field %>
+<%= hidden_field_tag :search_type, "coordinates" %>
+<h2>By Name</h2>
+</form>
+<%= form_tag find_towns_path, :method => :get %>
+Name: <%= text_field_tag :town_name %>
+<%= hidden_field_tag :search_type, "name" %>
+</form>

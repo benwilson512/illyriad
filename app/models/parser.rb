@@ -6,13 +6,18 @@ class Parser
   @@doc = Document.new File.new("xml_blobs/datafile_towns.xml")
   
   def self.parse!
+    start = Time.now
     self.create_alliances!
     self.create_players!
     self.create_towns!
+    finish = Time.now
+    diff = finish - start
+    puts "Seconds: #{diff}"
   end
     
   
   def self.create_alliances!
+    puts "Creating Alliances"
     doc = @@doc
     doc.elements.each("towns/town/player/playeralliance") do |alliance|
       game_id = alliance.elements["alliancename"].attributes["id"]
@@ -26,6 +31,7 @@ class Parser
   end
   
   def self.create_players!
+    puts "Creating Players"
     doc = @@doc
     doc.elements.each("towns/town/player") do |player|
       game_id = player.elements["playername"].attributes["id"]
@@ -44,10 +50,11 @@ class Parser
   end
   
   def self.create_towns!
+    puts "Creating Towns"
     doc = @@doc
     doc.elements.each("towns/town") do |town|
       game_id = town.elements["towndata/townname"].attributes["id"]
-      unless Town.find_by_game_id(game_id)
+      owner = Player.find_by_game_id town.elements["player/playername"].attributes["id"]
         name = town.elements["towndata/townname"].text
         population = town.elements["towndata/population"].text
         capital = town.elements["towndata/iscapitalcity"].text.to_i == 1 ? true : false
@@ -57,7 +64,6 @@ class Parser
         owner = Player.find_by_game_id town.elements["player/playername"].attributes["id"]
         owner.towns.create(:name => name, :game_id => game_id, :population => population, :capital => capital, :alliance_capital => alliance_capital, :x => x, :y => y)
       end
-    end
     nil
   end
   

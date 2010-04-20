@@ -1,0 +1,15 @@
+<h3 class="sifrd">Select a calculation to run</h3>
+
+<table class = "model_list">
+  <tr>
+    <th>Report type</th>
+    <th>Description</th>
+    <th>Actions</th>
+  <% Calculation.all.each do |calculation| %>
+    <tr>
+      <td><%= calculation.name %></td>
+      <td><%= calculation.description %></td>
+      <td><%= link_to "Generate Report", options_calculation_path(calculation) %>
+    </tr>
+  <% end %>
+</table>

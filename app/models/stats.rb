@@ -7,6 +7,10 @@ class Stats
     puts "Minimum y: #{min_y}"
   end
   
+  def closest_in_alliances(coordinates, [alliances])
+    alliances.each do |alliance|
+      
+  
   def self.max_x
     x = 0
     Town.all.each do |town|

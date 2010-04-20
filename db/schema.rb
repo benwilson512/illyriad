@@ -9,12 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100403012935) do
+ActiveRecord::Schema.define(:version => 20100414160550) do
 
   create_table "alliances", :force => true do |t|
     t.integer  "game_id"
     t.string   "name"
     t.string   "ticker"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calculations", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
