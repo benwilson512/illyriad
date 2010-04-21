@@ -1,3 +1,10 @@
+production:
+    adapter: mysql
+    username: root
+    password: root
+    socket: /var/run/mysqld/mysqld.sock
+    database: illyriad_production
+
 development:
   adapter: mysql
   username: root

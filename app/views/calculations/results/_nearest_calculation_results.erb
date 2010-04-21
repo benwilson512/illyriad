@@ -1,5 +1,6 @@
 <% cache(:key => Digest::SHA1.hexdigest(params.to_s)) do %>
 <% unless @report_items.blank? %>
+<%= @report_items.size %>
   <table>
     <tr>
       <th>Town Name</th>
@@ -14,7 +15,7 @@
       <td><%= link_to report_item[:town].player.name, player_path(report_item[:town].player) %></td>
       <td><%= report_item[:town].population %></td>
       <td><%= report_item[:town].player.alliance ? link_to(report_item[:town].player.alliance.name, alliance_path(report_item[:town].player.alliance)) : "No Alliance" %></td>
-      <th><%= report_item[:time] %></td>
+      <th><%= report_item[:time].to_s.split(".")[0] %> hours, <%= (report_item[:time].to_s.split(".")[1][0...2].to_f / 100) * 60 %> minutes</td>
     </tr>
   <% end %>
 </table>

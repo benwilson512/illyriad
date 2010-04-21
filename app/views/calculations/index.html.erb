@@ -1,6 +1,6 @@
-<h3 class="sifrd">Select a calculation to run</h3>
+<h3>Select a calculation to run</h3>
 
-<table class = "model_list">
+<table>
   <tr>
     <th>Report type</th>
     <th>Description</th>
@@ -9,7 +9,7 @@
     <tr>
       <td><%= calculation.name %></td>
       <td><%= calculation.description %></td>
-      <td><%= link_to "Generate Report", options_calculation_path(calculation) %>
+      <td><%= link_to "Generate Report", options_calculation_path(calculation) %></td>
     </tr>
   <% end %>
 </table>

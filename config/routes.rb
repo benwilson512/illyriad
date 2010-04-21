@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :players
+  map.resources :players, :collection => [:find]
   map.resources :alliances
   map.resources :towns, :collection => [:find], :member => [:nearest]
   map.resources :map

@@ -1,18 +1,8 @@
-<h1>Listing players</h1>
+<h1>Search for Players</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Alliance</th>
-  </tr>
-
-<% @players.each do |player| %>
-  <tr>
-    <td><%=h player.name %></td>
-    <td><%=h player.alliance ? player.alliance.name : "N/A" %></td>
-    <td><%= link_to 'Show', player %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<p><h2>By Name</h2></p>
+</form>
+<%= form_tag find_players_path, :method => :get %>
+Name: <%= text_field_tag :player_name %>
+<%= hidden_field_tag :search_type, "name" %>
+</form>

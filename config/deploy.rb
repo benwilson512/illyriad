@@ -1,22 +1,24 @@
 set :application, "illyriad"
-set :repository,  "set your repository location here"
+set :repository,  "git://github.com/benwilson512/Illyriad.git"
 
-set :scm, :subversion
+set :scm, :git
+set :deploy_to, "/var/www"
+set :user, "root"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "67.23.23.5"                          # Your HTTP server, Apache/etc
+role :app, "67.23.23.5"                          # This may be the same as your `Web` server
+role :db,  "67.23.23.5", :primary => true # This is where Rails migrations will run
+role :db,  "67.23.23.5"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+end
