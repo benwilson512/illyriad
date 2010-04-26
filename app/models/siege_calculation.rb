@@ -10,6 +10,9 @@
 #  updated_at  :datetime
 #
 
+
+# NOTE: Still heavily under development
+
 class SiegeCalculation < Calculation
   
   def query(alliance, target_alliance, time)

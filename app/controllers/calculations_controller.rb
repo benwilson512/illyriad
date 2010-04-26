@@ -24,7 +24,7 @@ class CalculationsController < ApplicationController
     calculation_type = Calculation.find_by_type params[:calculation_type]
     
     @report_items = calculation_type.query town, time, speed, alliances
-    
+    @reinforcements = town.find_reinforcements time, speed if town.player.alliance
   end
   
   private

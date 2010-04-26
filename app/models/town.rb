@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: towns
+#
+#  id               :integer(4)      not null, primary key
+#  name             :string(255)
+#  x                :integer(4)
+#  y                :integer(4)
+#  population       :integer(4)
+#  capital          :boolean(1)
+#  alliance_capital :boolean(1)
+#  game_id          :integer(4)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Town < ActiveRecord::Base
   
   # has_many :buildings
@@ -13,6 +29,7 @@ class Town < ActiveRecord::Base
   named_scope :x_less_than, lambda { |x_value| {:conditions => ["x <= #{x_value}"] } }
   named_scope :y_greater_than, lambda { |y_value| {:conditions => ["y >= #{y_value}"] } }
   named_scope :y_less_than, lambda { |y_value| {:conditions => ["y <= #{y_value}"] } }
+  named_scope :within_square_area, lambda { |town,distance| {:conditions => ["(x >= #{town.x-distance}) AND (x <= #{town.x+distance}) AND (y >= #{town.y-distance}) AND (x <= #{town.y+distance})"] } }
   
   def set_location!(new_x,new_y)
     self.x = x if new_x
@@ -20,8 +37,24 @@ class Town < ActiveRecord::Base
     self.save
   end
   
+  def find_reinforcements(max_time, speed)
+    reinforcements = []
+    speed = speed.to_i
+    max_time = max_time.to_i
+    distance = speed * max_time
+    Town.within_square_area(self,distance).each do |town|
+      distance = distance_from(town.x, town.y)
+      time = distance / speed
+      if time < max_time && town.player.alliance == self.player.alliance
+        reinforcements << {:distance => distance, :time => time, :town => town}
+      end
+    end
+    
+    sorted = reinforcements.sort_by { |item| item[:time] }
+  end
+  
   def distance_from(test_x,test_y)
-    Math.sqrt((self.x-test_x).power!(2) + (self.y-test_y).power!(2))
+    Math.sqrt((self.x-test_x)**2 + (self.y-test_y)**2)
   end
   
   def location
@@ -29,3 +62,4 @@ class Town < ActiveRecord::Base
   end
   
 end
+

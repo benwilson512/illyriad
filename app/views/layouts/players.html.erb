@@ -8,10 +8,19 @@
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-
+  
+  <div id="top">
+    <%= link_to "Alliances Index", alliances_path %>
+    <%= link_to "Players index", players_path %>
+    <%= link_to "Towns index", towns_path %>
+  </div>
+  
+  <hr>
+  
+<div id="content">
 <p style="color: green"><%= flash[:notice] %></p>
-
 <%= yield %>
+</div>
 
 </body>
 </html>

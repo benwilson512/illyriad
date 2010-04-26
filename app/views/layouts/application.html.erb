@@ -1,5 +1,12 @@
 <html>
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <div id="top">
+    <%= link_to "Alliances Index", alliances_path %>
+    <%= link_to "Players index", players_path %>
+    <%= link_to "Towns index", towns_path %> | 
+    <%= link_to "Back", :back %>
+  </div>
+  <hr>
+  <%= yield %>
+</body>
 </html>
