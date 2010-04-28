@@ -3,8 +3,6 @@ include REXML
 
 class Parser
   
-  @@doc = Document.new File.new("xml_blobs/datafile_towns.xml")
-  
   def self.parse!
     start = Time.now
     self.create_alliances!
@@ -20,7 +18,7 @@ class Parser
   
   def self.create_alliances!
     puts "Creating Alliances"
-    doc = @@doc
+    doc = Document.new File.new("xml_blobs/datafile_towns.xml")
     doc.elements.each("towns/town/player/playeralliance") do |alliance|
       game_id = alliance.elements["alliancename"].attributes["id"]
       unless Alliance.find_by_game_id(game_id)
@@ -34,7 +32,7 @@ class Parser
   
   def self.create_players!
     puts "Creating Players"
-    doc = @@doc
+    doc = Document.new File.new("xml_blobs/datafile_towns.xml")
     doc.elements.each("towns/town/player") do |player|
       game_id = player.elements["playername"].attributes["id"]
       unless Player.find_by_game_id(game_id)
@@ -53,7 +51,7 @@ class Parser
   
   def self.create_towns!
     puts "Creating Towns"
-    doc = @@doc
+    doc = Document.new File.new("xml_blobs/datafile_towns.xml")
     doc.elements.each("towns/town") do |town|
       game_id = town.elements["towndata/townname"].attributes["id"]
       owner = Player.find_by_game_id town.elements["player/playername"].attributes["id"]
@@ -67,10 +65,6 @@ class Parser
         owner.towns.create(:name => name, :game_id => game_id, :population => population, :capital => capital, :alliance_capital => alliance_capital, :x => x, :y => y)
       end
     nil
-  end
-  
-  def self.the_doc
-    puts @@doc
   end
   
 end
