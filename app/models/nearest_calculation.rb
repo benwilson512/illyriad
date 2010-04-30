@@ -16,18 +16,8 @@ class NearestCalculation < Calculation
     speed = speed.to_i
     @items = []
     max_distance = speed * max_time
-    
-    puts "time: #{max_time}"
-    puts "speed: #{speed}"
-    puts "distance: #{max_distance}"
-    puts "x value #{town.x}"
-    puts "y value #{town.y}"
-    puts "coordinates: #{town.location[0]}, #{town.location[1]}"
-    puts "town #{town.name}"
-    
     if !alliances.blank?
       puts "alliance"
-      # puts Town.within_square_area(town,max_distance).size
       Town.within_square_area(town,max_distance).each do |this_town|
         distance = town.distance_from(this_town.x, this_town.y)
         time = distance / speed

@@ -42,7 +42,7 @@ class Town < ActiveRecord::Base
     speed = speed.to_i
     max_time = max_time.to_i
     max_distance = speed * max_time
-    Town.within_square_area(town,max_distance).each do |town|
+    Town.within_square_area(self,max_distance).each do |town|
       distance = distance_from(town.x, town.y)
       time = distance / speed
       if time < max_time && town != self && town.player.alliance == self.player.alliance
