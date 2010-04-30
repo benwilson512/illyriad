@@ -15,22 +15,32 @@ class NearestCalculation < Calculation
     max_time = max_time.to_i
     speed = speed.to_i
     @items = []
-    @distance = speed * max_time
+    max_distance = speed * max_time
+    
+    puts "time: #{max_time}"
+    puts "speed: #{speed}"
+    puts "distance: #{max_distance}"
+    puts "x value #{town.x}"
+    puts "y value #{town.y}"
+    puts "coordinates: #{town.location[0]}, #{town.location[1]}"
+    puts "town #{town.name}"
+    
     if !alliances.blank?
       puts "alliance"
-      Town.within_square_area(town,@distance).each do |this_town|
+      # puts Town.within_square_area(town,max_distance).size
+      Town.within_square_area(town,max_distance).each do |this_town|
         distance = town.distance_from(this_town.x, this_town.y)
         time = distance / speed
-        if time < max_time && alliances.include?(this_town.player.alliance)
+        if distance <= max_distance && town != this_town && alliances.include?(this_town.player.alliance)
           @items << {:distance => distance, :time => time, :town => this_town}
         end
       end
     else
       puts "no alliance"
-      Town.population_greater_than(100).within_square_area(town,@distance).each do |this_town|
+      Town.within_square_area(town,max_distance).each do |this_town|
         distance = town.distance_from(this_town.x, this_town.y)
         time = distance / speed
-        if time < max_time
+        if time < max_time && this_town != town
           @items << {:distance => distance, :time => time, :town => this_town}
         end
       end

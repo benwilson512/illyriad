@@ -1,7 +1,8 @@
 <h1><%= @town.name %></h1>
 <p>Owner: <%= link_to(@town.player.name, player_path(@town.player)) %></p>
 <% if @town.player.alliance %><p>Alliance: <%= link_to @town.player.alliance.name, alliance_path(@town.player.alliance) %></p><% end %> <br />
-Population: <%= @town.population %>
+<p>Population: <%= @town.population %></p>
+<p>Coordinates <%= "#{@town.x} | #{@town.y}" %></p>
 
 <% Calculation.all.each do |calculation| %>
   <p><%= link_to(calculation.name, options_calculation_path(calculation, :town_id => @town.id)) %></p>

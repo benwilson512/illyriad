@@ -29,7 +29,7 @@ class Town < ActiveRecord::Base
   named_scope :x_less_than, lambda { |x_value| {:conditions => ["x <= #{x_value}"] } }
   named_scope :y_greater_than, lambda { |y_value| {:conditions => ["y >= #{y_value}"] } }
   named_scope :y_less_than, lambda { |y_value| {:conditions => ["y <= #{y_value}"] } }
-  named_scope :within_square_area, lambda { |town,distance| {:conditions => ["(x >= #{town.x-distance}) AND (x <= #{town.x+distance}) AND (y >= #{town.y-distance}) AND (x <= #{town.y+distance})"] } }
+  named_scope :within_square_area, lambda { |town,distance| {:conditions => ["((x >= #{town.x-distance}) AND (x <= #{town.x+distance}) AND (y >= #{town.y-distance}) AND (y <= #{town.y+distance}))"] } }
   
   def set_location!(new_x,new_y)
     self.x = x if new_x
@@ -41,11 +41,11 @@ class Town < ActiveRecord::Base
     reinforcements = []
     speed = speed.to_i
     max_time = max_time.to_i
-    distance = speed * max_time
-    Town.within_square_area(self,distance).each do |town|
+    max_distance = speed * max_time
+    Town.within_square_area(town,max_distance).each do |town|
       distance = distance_from(town.x, town.y)
       time = distance / speed
-      if time < max_time && town.player.alliance == self.player.alliance
+      if time < max_time && town != self && town.player.alliance == self.player.alliance
         reinforcements << {:distance => distance, :time => time, :town => town}
       end
     end
@@ -58,7 +58,7 @@ class Town < ActiveRecord::Base
   end
   
   def location
-    [self.x,self.y]
+    [self.x, self.y]
   end
   
 end
