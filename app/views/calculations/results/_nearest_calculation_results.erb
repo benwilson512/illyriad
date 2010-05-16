@@ -1,13 +1,13 @@
 <% cache(:key => Digest::SHA1.hexdigest(params.to_s)) do %>
 <% unless @report_items.blank? %>
-<%= @report_items.size %> valid results
+<%= @report_items.size %> valid results for town <b><%= @town.name %></b>
   <table>
     <tr>
       <th>Town Name</th>
       <th>Town Owner</th>
       <th>Population</th>
       <th>Alliance</th>
-      <th>Time</th>
+      <th>Time (speed <%= @speed %> </th>
       <th>Siege Time</th>
     </tr>
   <% @report_items.each do |report_item| %>
@@ -15,34 +15,13 @@
       <td><%= link_to report_item[:town].name, town_path(report_item[:town]) %></td>
       <td><%= link_to report_item[:town].player.name, player_path(report_item[:town].player) %></td>
       <td><%= report_item[:town].population %></td>
-      <td><%= report_item[:town].player.alliance ? link_to(report_item[:town].player.alliance.name, alliance_path(report_item[:town].player.alliance)) : "No Alliance" %></td>
+      <td><%= link_to_alliance(report_item[:town].player) %></td>
       <td><%= format_time(report_item[:time]) %></td>
       <td><%= format_siege_time report_item[:distance] %></td>
     </tr>
   <% end %>
 </table>
-[corners=forumbg forumbg-table][table=tablebg table1]
-[thread]
-[tr]
-[th=1]Town[/th]
-[th=1]Player[/th]
-[th=1]Population[/th]
-[th=1]time[/th]
-[th=1]siege time[/th]
-[/tr]
-[/thread]
-[tbody]
-<% @report_items.each do |report_item| %>
-[tr]
-[td=1]<%= report_item[:town].name %>[/td]
-[td=1]<%= report_item[:town].player.name %>[/td]
-[td=1]<%= report_item[:town].population %>[/td]
-[td=1]<%= format_time report_item[:time] %>[/td]
-[td=1]<%= format_siege_time report_item[:distance] %>[/td]
-[/tr]
-<% end %>
-[/tbody]
-[/table][/corners]
+<% get_bbcode(@report_items) %>
 <% end %>
 <% unless @reinforcements.blank? %>
 <h2>Reinforcements</h2>
@@ -63,6 +42,9 @@
       <td><%= format_time(report_item[:time]) %></td>
     </tr>
   <% end %>
+<% puts "" %>
+<% puts "Reinforcements from #{@reinforcements.first[:town].player.alliance.name}" %>
+<% get_bbcode(@reinforcements) %>
 </table>
 <% end %>
 <% end %>

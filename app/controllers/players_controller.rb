@@ -12,11 +12,10 @@ class PlayersController < ApplicationController
       name = params[:player_name]
       @player = Player.find_by_name name
     end
-    redirect_to player_path @player
+    redirect_to player_path(@player)
   end
   
   def show
-    @alliance = @player.alliance
     @towns = @player.towns.all
   end
   

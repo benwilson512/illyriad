@@ -67,4 +67,31 @@ class Parser
     nil
   end
   
+  def self.query
+    xmin = -55
+    xmax = 40.6
+    ymin = -36
+    ymax = 60
+    xavg = -7.4
+    yavg = 12
+    towns = Town.x_less_than(xmax).x_greater_than(xmin).y_less_than(ymax).y_greater_than(ymin)
+    harmless = Alliance.find_by_name("Harmless?")
+    towns = towns.select { |town| town if town.player.alliance == harmless }
+    items = []
+    towns.each do |town|
+      distance = town.distance_from(xavg, yavg)
+      time = distance / 4
+      items << {:town => town, :time => time}
+    end
+    puts "towns"
+    puts towns.size
+    puts "items"
+    puts items.size
+    puts "----"
+    items = items.sort_by { |item| item[:time] }
+    items.each do |item|
+      puts "Player: #{item[:town].player.name} -- Town: #{item[:town].name} -- Population: #{item[:town].population} -- Time: #{item[:time]}"
+    end
+  end
+  
 end

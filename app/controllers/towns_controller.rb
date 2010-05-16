@@ -17,7 +17,7 @@ class TownsController < ApplicationController
       @town = Town.by_name name
     end
     if @town.class == Town
-      redirect_to town_path @town
+      redirect_to town_path(@town)
     else
       @towns = @town
     end

@@ -1,4 +1,5 @@
 class AlliancesController < ApplicationController
+  
   def index
     @alliances = Alliance.all
   end

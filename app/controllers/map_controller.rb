@@ -10,8 +10,7 @@ class MapController < ApplicationController
     @data_table.add_column gv::DataColumn.new(gv::DataType::NUMBER)
     @data_table.add_column gv::DataColumn.new(gv::DataType::STRING)
     Town.all.each do |town|
-      @data_table.add_row [town.x, town.y, town.player.alliance ? town.player.alliance.name : "Unaffiliated" ] unless town.x == 1000
+      @data_table.add_row [town.x, town.y, town.player.alliance ? town.player.alliance.name : "Unaffiliated" ]
     end
   end
-  
 end

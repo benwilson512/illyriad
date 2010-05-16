@@ -2,5 +2,8 @@
 <h2>Members</h2>
 <% @alliance.players.each do |player| %>
   <p><%= link_to player.name, player %></p>
+  <% player.towns.each do |town| %>
+   <%= "#{town.name}, #{town.population}" %>
+  <% end %>
 <% end %>
 <%= link_to "Alliances Index", alliances_path %>
