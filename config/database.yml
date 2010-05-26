@@ -1,15 +1,18 @@
-production:
-    adapter: mysql
-    username: root
-    password: root
-    socket: /var/run/mysqld/mysqld.sock
-    database: illyriad_production
-
-development:
+sharedconf: &sharedconf
   adapter: mysql
   username: root
-  password: root
-  socket: /tmp/mysql.sock
+
+localconf: &localconf
+  <<: *sharedconf
+  password:
+  socket: <%= %w{ /opt/local/var/run/mysql5/mysqld.sock 
+                  /var/lib/mysql/mysql.sock
+                  /var/lib/mysqld/mysql.sock
+                  /tmp/mysql.sock
+                }.find {|fn| File.exist? fn} %>
+
+development:
+  <<: *localconf
   database: illyriad_development
   
 test:

@@ -14,5 +14,6 @@ class Alliance < ActiveRecord::Base
   
   has_many :players
   
+  named_scope :by_name, :order => :name
+  
 end
-

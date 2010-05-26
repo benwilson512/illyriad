@@ -21,7 +21,7 @@
     </tr>
   <% end %>
 </table>
-<% get_bbcode(@report_items) %>
+BB Code: <%= clippy get_bbcode(@report_items) %>
 <% end %>
 <% unless @reinforcements.blank? %>
 <h2>Reinforcements</h2>
@@ -44,7 +44,7 @@
   <% end %>
 <% puts "" %>
 <% puts "Reinforcements from #{@reinforcements.first[:town].player.alliance.name}" %>
-<% get_bbcode(@reinforcements) %>
+BB Code: <%= clippy get_bbcode(@reinforcements) %>
 </table>
 <% end %>
 <% end %>

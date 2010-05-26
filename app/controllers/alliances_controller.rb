@@ -1,11 +1,20 @@
 class AlliancesController < ApplicationController
   
+  before_filter :alliance, :except => [:index]
+  
   def index
-    @alliances = Alliance.all
+    @alliances = Alliance.by_name
   end
 
   def show
-    @alliance = Alliance.find(params[:id])
+    @players = alliance.players.by_name
+    puts @players
   end
+  
+  private
+   
+   def alliance
+     @alliance ||= Alliance.find(params[:id])
+   end
 
 end

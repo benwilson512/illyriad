@@ -27,7 +27,6 @@ module CalculationsHelper
       code << "[/tr]"
     end
     code << "[/table]"
-    puts code
   end
   
 end
