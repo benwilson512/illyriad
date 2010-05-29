@@ -1,4 +1,4 @@
-<h1><%= @town.name %></h1>
+<h1><%= @town.name %></h1><%= link_to "View in Illyriad", "http://uk1.illyriad.co.uk/view_map.asp?Radius=5&CenterX=#{@town.x}&CenterY=#{@town.y}"%>
 <p>Owner: <%= link_to(@town.player.name, player_path(@town.player)) %></p>
 <% if @town.player.alliance %><p>Alliance: <%= link_to @town.player.alliance.name, alliance_path(@town.player.alliance) %></p><% end %> <br />
 <p>Population: <%= @town.population %></p>
