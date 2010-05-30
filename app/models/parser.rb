@@ -94,4 +94,25 @@ class Parser
     end
   end
   
+  def self.average
+    total = 0
+    distances = []
+    # towns = Town.all.select { |town| town if (rand >= 0.95) }
+    towns = Town.population_greater_than(1000)
+    towns = towns.select{|town| town if town.player.alliance}
+    towns.each do |town|
+      towns.each do |town_prime|
+        total += 1
+        distances << town.distance_from(town_prime.x,town_prime.y)
+      end
+    end
+    puts "total: #{total}"
+    # puts "total_distance: #{total_distance}"
+    # average = total_distance / total
+    puts (distances.size/2).to_i
+    distances.sort!
+    median = distances[(distances.length/2).to_i]
+    puts "median: #{median}"
+  end
+  
 end
