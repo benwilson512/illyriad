@@ -15,8 +15,8 @@ module CalculationsHelper
     return "#{hours} hours, #{minutes} minutes"
   end
   
-  def get_bbcode(report_items)
-    code = "[table][tr][th]Town[/th][th]Player[/th][th]Population[/th][th]time[/th][th]siege time[/th][/tr]"
+  def get_bbcode(report_items, speed)
+    code = "[table][tr][th]Town[/th][th]Player[/th][th]Population[/th][th]Time (#{speed})[/th][th]Siege time[/th][/tr]"
     report_items.each do |report_item|
       code << "[tr]"
       code << "[td]#{report_item[:town].name}[/td]"
