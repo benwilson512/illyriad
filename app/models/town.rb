@@ -12,13 +12,13 @@
 #  game_id          :integer(4)
 #  created_at       :datetime
 #  updated_at       :datetime
+#  player_id        :integer(4)
 #
 
 class Town < ActiveRecord::Base
   
   # has_many :buildings
-  has_one :ownership
-  has_one :player, :through => :ownership
+  belongs_to :player
   
   validates_uniqueness_of :game_id
   
@@ -62,4 +62,5 @@ class Town < ActiveRecord::Base
   end
   
 end
+
 

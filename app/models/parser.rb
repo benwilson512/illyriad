@@ -11,7 +11,7 @@ class Parser
     finish = Time.now
     diff = finish - start
     puts "Seconds: #{diff}"
-    objects_created = Alliance.all.size + Ownership.all.size + Town.all.size + Player.all.size
+    objects_created = Alliance.all.size + Town.all.size + Player.all.size
     puts "Objects Created: #{objects_created}"
   end
     
@@ -95,3 +95,4 @@ class Parser
   end
   
 end
+  
