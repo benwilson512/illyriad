@@ -1,3 +1,8 @@
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 3660cba
+  specs:
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -77,7 +82,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  devise (= 1.1.rc1)
+  devise!
   google_visualization
   mysql
   rails (= 3.0.0.beta4)

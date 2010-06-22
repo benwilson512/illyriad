@@ -7,7 +7,7 @@ gem 'rails', '3.0.0.beta4'
 
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
-gem 'devise', "1.1.rc1"
+gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'google_visualization'
 
 

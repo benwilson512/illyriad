@@ -1,4 +1,6 @@
 Illyriad::Application.routes.draw do |map|
+  devise_for :users
+
   map.resources :players, :collection => [:find]
   map.resources :alliances
   map.resources :towns, :collection => [:find], :member => [:nearest]
