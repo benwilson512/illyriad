@@ -35,6 +35,8 @@ class TownsController < ApplicationController
   
     def town
      @town ||= Town.find(params[:id])
+     puts "YO"
+     puts @town.name
     end
     
 end

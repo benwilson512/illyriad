@@ -16,6 +16,6 @@ class Player < ActiveRecord::Base
   has_many :towns
   
   belongs_to :alliance
-  named_scope :by_name, :order => :name
+  scope :by_name, :order => :name
   
 end
