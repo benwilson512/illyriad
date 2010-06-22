@@ -4,15 +4,8 @@ Illyriad::Application.routes.draw do |map|
   map.resources :towns, :collection => [:find], :member => [:nearest]
   map.resources :map
   map.resources :calculations, :member => [:options, :results]
-  
-<<<<<<< HEAD
-  # devise_for :users
-
-  # The priority is based upon order of creation: first created -> highest priority.
-=======
   # The priority is based upon order of creation:
   # first created -> highest priority.
->>>>>>> new_parser
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
