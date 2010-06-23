@@ -1,4 +1,6 @@
 Illyriad::Application.routes.draw do |map|
+  devise_for :admins
+
   devise_for :users
 
   map.resources :players, :collection => [:find]

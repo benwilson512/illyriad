@@ -9,6 +9,7 @@ gem 'rails', '3.0.0.beta4'
 gem 'mysql'
 gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'google_visualization'
+# gem 'will_paginate'
 
 
 # Use unicorn as the web server
