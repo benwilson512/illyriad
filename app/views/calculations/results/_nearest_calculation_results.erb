@@ -23,7 +23,7 @@
     </tr>
   <% end %>
 </table>
-BB Code: removed until its not broken
+BB Code: <%=raw clippy get_bbcode(@report_items, @report_items.first[:speed] )%>
 <% end %>
 <% unless @reinforcements.blank? %>
 <h2>Reinforcements</h2>
@@ -46,7 +46,7 @@ BB Code: removed until its not broken
   <% end %>
 <% puts "" %>
 <% puts "Reinforcements from #{@reinforcements.first[:town].player.alliance.name}" %>
-BB Code: removed until its not broken
+BB Code: <%=raw clippy get_bbcode(@reinforcements, @reinforcements.first[:speed] )%>
 </table>
 <% end %>
 <% end %>
