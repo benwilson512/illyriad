@@ -1,0 +1,20 @@
+common: &common
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password: root
+  socket: <%= %w[/var/run/mysqld/mysqld.sock /tmp/mysql.sock].find { |socket| File.exist?(socket) } %>
+
+development:
+  <<: *common
+  database: illyriad_development
+
+test:
+  <<: *common
+  database: illyriad_test
+
+production:
+  <<: *common
+  database: illyriad_production
