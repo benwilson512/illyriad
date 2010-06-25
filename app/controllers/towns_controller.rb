@@ -1,5 +1,6 @@
 class TownsController < ApplicationController
   
+  before_filter :authenticate_user!
   before_filter :town, :except => [:index, :find]
   
   def index

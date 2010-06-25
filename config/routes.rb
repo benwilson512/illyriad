@@ -1,7 +1,10 @@
 Illyriad::Application.routes.draw do |map|
   devise_for :admins
 
-  devise_for :users
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout' }
+   match 'login', :to => 'devise/sessions#new', :as => "new_user_session"
+   match 'logout', :to  => 'devise/sessions#destroy', :as => "destroy_user_session"
+   match 'signup', :to => 'devise/registrations#new', :as => "new_user_registration"
 
   map.resources :players, :collection => [:find]
   map.resources :alliances
