@@ -17,7 +17,6 @@ class NearestCalculation < Calculation
     @items = []
     max_distance = speed * max_time
     if !alliances.blank?
-      puts "alliance"
       Town.within_square_area(town,max_distance).each do |this_town|
         distance = town.distance_from(this_town.x, this_town.y)
         time = distance / speed
@@ -26,7 +25,6 @@ class NearestCalculation < Calculation
         end
       end
     else
-      puts "no alliance"
       Town.within_square_area(town,max_distance).each do |this_town|
         distance = town.distance_from(this_town.x, this_town.y)
         time = distance / speed
@@ -38,15 +36,8 @@ class NearestCalculation < Calculation
     
     @sorted = @items.sort_by { |item| item[:time] }
     
-    # @sorted.each do |item|
-    #   puts "Town: #{item[:town].name}"
-    #   puts "Distance: #{item[:distance]}"
-    #   puts "Time: #{item[:time]}"
-    #   puts "----------"
-    # end
-    
     return @sorted
   end
-  
+  # select p.name, a.ticker, t.pop, t.mapx, t.mapy, SQRT(POW(t.mapx)-<x center coord>,2)+POW(t.mapy-<y center coord>,2)) as range FROM towns t JOIN players p ON p.id = t.player_id LEFT JOIN alliances a ON p.alliance = a.id WHERE ticker in (<list of alliance tickers>) AND t.pop > <min pop here if you want> ORDER BY range ASC limit <max results>
   
 end

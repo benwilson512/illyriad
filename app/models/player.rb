@@ -17,5 +17,6 @@ class Player < ActiveRecord::Base
   
   belongs_to :alliance
   scope :by_name, :order => :name
+  scope :of_race, lambda { |race| {:conditions => { :race => race } } }
   
 end

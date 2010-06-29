@@ -62,5 +62,3 @@ class Town < ActiveRecord::Base
   end
   
 end
-
-
