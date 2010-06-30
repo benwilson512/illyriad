@@ -19,6 +19,7 @@ class Town < ActiveRecord::Base
   
   # has_many :buildings
   belongs_to :player
+  has_many :nearest_calculations, :as => :subject
   
   validates_uniqueness_of :game_id
   

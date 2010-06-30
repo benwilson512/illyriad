@@ -10,7 +10,3 @@
 #  updated_at  :datetime
 #
 
-class Calculation < ActiveRecord::Base
-  
-end
-

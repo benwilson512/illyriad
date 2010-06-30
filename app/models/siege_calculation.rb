@@ -13,7 +13,7 @@
 
 # NOTE: Still heavily under development
 
-class SiegeCalculation < Calculation
+class SiegeCalculation < ActiveRecord::Base
   
   def query(alliance, target_alliance, time)
     time = time.to_i

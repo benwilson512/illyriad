@@ -1,16 +1,21 @@
 # == Schema Information
 #
-# Table name: calculations
+# Table name: nearest_calculations
 #
-#  id          :integer(4)      not null, primary key
-#  name        :string(255)
-#  type        :string(255)
-#  description :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id         :integer(4)      not null, primary key
+#  subject_id :integer(4)
+#  speed      :integer(4)
+#  time       :integer(4)
+#  alliances  :string(255)
+#  results    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
-class NearestCalculation < Calculation
+class NearestCalculation < ActiveRecord::Base
+  
+  belongs_to :subject, :polymorphic => true
+    
   def query(town, max_time, speed, alliances)
     max_time = max_time.to_i
     speed = speed.to_i
