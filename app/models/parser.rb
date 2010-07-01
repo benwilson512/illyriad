@@ -44,15 +44,15 @@ class Parser
       end
     end
     
+    puts "Creating Alliances"
     alliances.each do |alliance|
-      puts "Creating Alliances"
       Alliance.create(:game_id => alliance[:game_id], 
                       :name => alliance[:name], 
                       :ticker => alliance[:ticker]) unless Alliance.find_by_game_id(alliance[:game_id])
     end
     
+    puts "Creating Players"
     players.each do |player|
-      puts "Creating Players"
       alliance_id = Alliance.find_by_game_id(player[:alliance_game_id])
       Player.create(:name => player[:name], 
                     :game_id => player[:game_id], 
@@ -60,8 +60,8 @@ class Parser
                     :alliance_id => alliance_id) unless Player.find_by_game_id(player[:game_id])
     end
     
+    puts "Creating Towns"
     towns.each do |town|
-      puts "Creating Towns"
       player_id = Player.find_by_game_id(town[:player_game_id])
       Town.create(:x => town[:mapx], 
                   :y => town[:mapy], 
