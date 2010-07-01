@@ -15,6 +15,8 @@ class Player < ActiveRecord::Base
   
   has_many :towns
   
+  validates_uniqueness_of :game_id
+  
   belongs_to :alliance
   scope :by_name, :order => :name
   scope :of_race, lambda { |race| {:conditions => { :race => race } } }

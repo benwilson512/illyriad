@@ -48,7 +48,7 @@ class Parser
     alliances.each do |alliance|
       Alliance.create(:game_id => alliance[:game_id], 
                       :name => alliance[:name], 
-                      :ticker => alliance[:ticker]) unless Alliance.find_by_game_id(alliance[:game_id])
+                      :ticker => alliance[:ticker])
     end
     
     puts "Creating Players"
@@ -57,7 +57,7 @@ class Parser
       Player.create(:name => player[:name], 
                     :game_id => player[:game_id], 
                     :race => player[:race], 
-                    :alliance_id => alliance_id) unless Player.find_by_game_id(player[:game_id])
+                    :alliance_id => alliance_id)
     end
     
     puts "Creating Towns"
@@ -70,7 +70,7 @@ class Parser
                   :capital => town[:capital], 
                   :alliance_capital => town[:alliance_capital], 
                   :game_id => town[:game_id], 
-                  :player_id => player_id) #no unless here because there aren't duplicate town entries
+                  :player_id => player_id)
     end
     
   end

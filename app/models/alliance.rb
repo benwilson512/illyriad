@@ -14,6 +14,8 @@ class Alliance < ActiveRecord::Base
   
   has_many :players
   
+  validates_uniqueness_of :game_id
+  
   scope :by_name, :order => :name
   
 end
