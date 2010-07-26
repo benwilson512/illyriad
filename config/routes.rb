@@ -6,11 +6,17 @@ Illyriad::Application.routes.draw do |map|
    match 'logout', :to  => 'devise/sessions#destroy', :as => "destroy_user_session"
    match 'signup', :to => 'devise/registrations#new', :as => "new_user_registration"
 
-  map.resources :players, :collection => [:find]
-  map.resources :alliances
-  map.resources :towns, :collection => [:find], :member => [:nearest]
-  map.resources :map
-  map.resources :calculations, :member => [:options, :results]
+  resources :players, :collection => [:find]
+  resources :alliances
+  resources :towns do
+    resources :nearest_calculations
+    
+    collection do
+      get :find
+    end
+  end
+  resources :map
+  resources :calculations, :member => [:options, :results]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

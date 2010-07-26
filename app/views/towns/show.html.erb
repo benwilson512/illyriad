@@ -4,6 +4,8 @@
 <p>Population: <%= @town.population %></p>
 <p>Coordinates <%= "#{@town.x} | #{@town.y}" %></p>
 
-<% Calculation.all.each do |calculation| %>
-  <p><%= link_to(calculation.name, options_calculation_path(calculation, :town_id => @town.id)) %></p>
+<h2>Nearest Calculations</h2>
+<%= link_to "new", new_town_nearest_calculation_path %>
+<% town.nearest_calculations.each do |calculation| %>
+  <p><%= link_to(calculation.name, nearest_calculations_path(calculation)) %></p>
 <% end %>

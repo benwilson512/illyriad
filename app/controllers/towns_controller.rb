@@ -1,6 +1,6 @@
 class TownsController < ApplicationController
   
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
   before_filter :town, :except => [:index, :find]
   
   def index
@@ -14,10 +14,12 @@ class TownsController < ApplicationController
       y_value = params[:y_field].to_i
       @town = Town.at_coordinates(x_value,y_value)[0]
     when "name"
+      puts "yaryar"
       name = params[:town_name]
       @town = Town.by_name name
     end
     if @town.class == Town
+      puts "HERE"
       redirect_to town_path(@town)
     else
       @towns = @town
@@ -36,8 +38,6 @@ class TownsController < ApplicationController
   
     def town
      @town ||= Town.find(params[:id])
-     puts "YO"
-     puts @town.name
     end
     
 end
