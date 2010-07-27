@@ -1,12 +1,29 @@
+<% if @towns %>
+Select Owner
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Alliance</th>
+  </tr>
+<% @towns.each do |town| %>
+  <tr>
+    <td><%= town.name %></td>
+    <td><%= town.player.alliance ? link_to(town.player.alliance.name, alliance_path(town.player.alliance)) : "N/A" %></td>
+    <td><%= link_to "Select", town_path(town) %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
 <h1>Search for a Town</h1>
 <h2>By Coordinates</h2>
-<%= form_tag find_towns_path, :method => :get %>
+<%= form_tag towns_path, :method => :get %>
 X: <%= text_field_tag :x_field %>
 Y: <%= text_field_tag :y_field %>
 <%= hidden_field_tag :search_type, "coordinates" %>
 <h2>By Name</h2>
 </form>
-<%= form_tag find_towns_path, :method => :get %>
+<%= form_tag towns_path, :method => :get %>
 Name: <%= text_field_tag :town_name %>
 <%= hidden_field_tag :search_type, "name" %>
 </form>
+<% end %>

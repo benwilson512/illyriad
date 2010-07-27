@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me@config-initializers-devise.com"
-  config.use_default_scope = true
+  # config.use_default_scope = true
   config.default_scope = :user
 
   # ==> Configuration for any authentication mechanism

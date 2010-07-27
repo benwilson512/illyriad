@@ -2,7 +2,7 @@
 
 <p><h2>By Name</h2></p>
 </form>
-<%= form_tag find_players_path, :method => :get %>
+<%= form_tag players_path, :method => :get %>
 Name: <%= text_field_tag :player_name %>
 <%= hidden_field_tag :search_type, "name" %>
 </form>

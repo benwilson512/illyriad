@@ -1,19 +1,5 @@
-# == Schema Information
-#
-# Table name: calculations
-#
-#  id          :integer(4)      not null, primary key
-#  name        :string(255)
-#  type        :string(255)
-#  description :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
-#
 
-
-# NOTE: Still heavily under development
-
-class SiegeCalculation < ActiveRecord::Base
+class SiegeCalculation < Calculation  
   
   def query(alliance, target_alliance, time)
     time = time.to_i

@@ -19,7 +19,7 @@ class Town < ActiveRecord::Base
   
   # has_many :buildings
   belongs_to :player
-  has_many :nearest_calculations, :as => :subject
+  has_many :nearest_calculations
   
   validates_uniqueness_of :game_id
   
@@ -31,17 +31,16 @@ class Town < ActiveRecord::Base
   scope :y_greater_than, lambda { |y_value| {:conditions => ["y >= #{y_value}"] } }
   scope :y_less_than, lambda { |y_value| {:conditions => ["y <= #{y_value}"] } }
   scope :within_square_area, lambda { |town,distance| {:conditions => ["((x >= #{town.x-distance}) AND (x <= #{town.x+distance}) AND (y >= #{town.y-distance}) AND (y <= #{town.y+distance}))"] } }
+  scope :owned_by, lambda { |player_id| {:conditions => {:player_id => player_id } } }
   
-  def set_location!(new_x,new_y)
-    self.x = x if new_x
-    self.y = y if new_y
-    self.save
+  def alliance
+    self.player.alliance
   end
   
-  def find_reinforcements(max_time, speed)
+  def find_reinforcements(params)
     reinforcements = []
-    speed = speed.to_i
-    max_time = max_time.to_i
+    speed = params[:speed].to_i
+    max_time = params[:time].to_i
     max_distance = speed * max_time
     Town.within_square_area(self,max_distance).each do |town|
       distance = distance_from(town.x, town.y)

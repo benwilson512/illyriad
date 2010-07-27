@@ -10,7 +10,7 @@ class Parser
     towns = []
     player_game_ids = []
     puts "working"  
-    doc = Nokogiri::XML(File.open("#{RAILS_ROOT}/xml_blobs/datafile_towns.xml"))
+    doc = Nokogiri::XML(File.open("#{Rails.root}/xml_blobs/datafile_towns.xml"))
     doc.xpath('towns/town').each do |town|
       tmp_town = {}
       tmp_alliance = {}
@@ -53,7 +53,8 @@ class Parser
     
     puts "Creating Players"
     players.each do |player|
-      alliance_id = Alliance.find_by_game_id(player[:alliance_game_id])
+      alliance = Alliance.find_by_game_id(player[:alliance_game_id])
+      alliance ? alliance_id = alliance.id : Alliance.find_by_game_id(-1).id
       Player.create(:name => player[:name], 
                     :game_id => player[:game_id], 
                     :race => player[:race], 
@@ -62,7 +63,7 @@ class Parser
     
     puts "Creating Towns"
     towns.each do |town|
-      player_id = Player.find_by_game_id(town[:player_game_id])
+      player_id = Player.find_by_game_id(town[:player_game_id]).id
       Town.create(:x => town[:mapx], 
                   :y => town[:mapy], 
                   :name => town[:name], 
@@ -74,5 +75,13 @@ class Parser
     end
     
   end
+  
+  # def create_smaller_sample
+  #   doc = Nokogiri::XML(File.open("#{Rails.root}/xml_blobs/datafile_towns.xml"))
+  #   
+  #   doc.xpath('towns/town').each_with_index do |town,i|
+  #     i % 100 == 0 ? xml << town
+  #   end
+  # end
   
 end

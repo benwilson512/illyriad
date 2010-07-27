@@ -8,7 +8,6 @@ class AlliancesController < ApplicationController
 
   def show
     @players = alliance.players.by_name
-    puts @players
   end
   
   private

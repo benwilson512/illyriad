@@ -1,5 +1,4 @@
 Illyriad::Application.routes.draw do |map|
-  devise_for :admins
 
   devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout' }
    match 'login', :to => 'devise/sessions#new', :as => "new_user_session"
@@ -9,14 +8,20 @@ Illyriad::Application.routes.draw do |map|
   resources :players, :collection => [:find]
   resources :alliances
   resources :towns do
-    resources :nearest_calculations
-    
     collection do
       get :find
     end
   end
-  resources :map
-  resources :calculations, :member => [:options, :results]
+  
+  match 'map', :to => 'map#index'
+  
+  resources :calculations do
+     member do
+       get :options
+       get :results
+     end
+   end
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,5 +1,6 @@
 class CalculationsController < ApplicationController
   
+  before_filter :authenticate_user!
   before_filter :calculation, :except => [:index]
   
   def index
@@ -17,19 +18,16 @@ class CalculationsController < ApplicationController
   end
   
   def results
-    @town = Town.find params[:town_id]
-    time = params[:time]
-    @speed = params[:speed]
-    alliances = params[:alliances].split(", ").collect { |name| Alliance.find_by_name(name) }
     calculation_type = Calculation.find_by_type params[:calculation_type]
     max_results = params[:max_results].to_i
+    @town = Town.find(params[:town_id])
     
-    @report_items = calculation_type.query @town, time, @speed, alliances
-    @reinforcements = @town.find_reinforcements time, @speed if @town.player.alliance
+    @report_items = calculation_type.query(params)
+    # @reinforcements = @town.find_reinforcements(params)
     
     if max_results > 0
       @report_items = @report_items.slice(0,max_results)
-      @reinforcements = @reinforcements.slice!(0,max_results)
+      # @reinforcements = @reinforcements.slice(0,max_results)
     end
     
   end
