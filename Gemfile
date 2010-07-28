@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.0.0.beta4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,6 +11,7 @@ gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'google_visualization'
 gem 'cucumber'
 gem 'annotate'
+gem 'bundler', '0.9.11'
 # gem 'will_paginate'
 
 
