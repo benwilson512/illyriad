@@ -28,6 +28,7 @@ gem 'annotate'
 # gem 'bj'
 gem 'nokogiri', '1.4.1'
 gem 'memcached-northscale'
+gem 'memcache'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
