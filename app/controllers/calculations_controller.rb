@@ -23,11 +23,13 @@ class CalculationsController < ApplicationController
     @town = Town.find(params[:town_id])
     
     @report_items = calculation_type.query(params)
-    # @reinforcements = @town.find_reinforcements(params)
+    if params[:reinforcements] == "1"
+      @reinforcements = @town.find_reinforcements(params)
+    end
     
     if max_results > 0
       @report_items = @report_items.slice(0,max_results)
-      # @reinforcements = @reinforcements.slice(0,max_results)
+      @reinforcements = @reinforcements.slice(0,max_results)
     end
     
   end
