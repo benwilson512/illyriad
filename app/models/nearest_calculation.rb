@@ -4,7 +4,6 @@ class NearestCalculation < Calculation
     input_time = params[:time].to_i
     input_speed = params[:speed].to_i
     input_town = Town.find(params[:town_id])
-    puts input_time.inspect, input_speed.inspect
     max_distance = input_speed * input_time
     alliances = params[:alliances].split(", ").collect { |name| Alliance.find_by_name(name) }
     

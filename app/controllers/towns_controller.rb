@@ -16,9 +16,6 @@ class TownsController < ApplicationController
       redirect_to town_path(@town)
     else
       @towns = @town
-      puts "hey hey"
-      puts @towns.inspect
-      puts "yo"
     end
   end
   
