@@ -1,6 +1,7 @@
 class TownsController < ApplicationController
   
   before_filter :town, :except => [:index, :find]
+  before_filter :authenticate_user!
   
   def index
     case params[:search_type]
@@ -20,7 +21,6 @@ class TownsController < ApplicationController
   end
   
   def show
-    puts params.inspect
   end
   
   def near_town
