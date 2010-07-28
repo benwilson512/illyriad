@@ -8,6 +8,10 @@ Illyriad::Application.routes.draw do |map|
     collection do
       get :find
     end
+    member do
+      post :select_as_target
+      post :add_to_siege
+    end
   end
   
   match 'map', :to => 'map#index'
