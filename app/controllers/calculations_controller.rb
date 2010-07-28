@@ -1,6 +1,6 @@
 class CalculationsController < ApplicationController
   
-  # before_filter :authenticate_user!
+  before_filter :authenticate_user!
   before_filter :calculation, :except => [:index]
   
   def index
