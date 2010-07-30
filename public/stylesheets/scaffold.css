@@ -52,7 +52,138 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
-#right div {
+#right {
 	text-align: right;
 }
 
+#town_info li {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+
+form label {
+  color: #59594c;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0 0 3px 0;
+  text-transform: uppercase;
+}
+
+table tr.odd td {
+  background-color: #eee;
+}
+
+table tr.even td {}
+
+
+table {
+  width: 60%;
+}
+
+table td {
+  border-top: 1px solid #d7d3ce;
+  color: #59594c;
+  font-size: 12px;
+  padding: 10px;
+  vertical-align: top;
+  width: 250px;
+}
+  
+table td {
+  font-size: 16px;
+}
+
+table.model_list {
+  width: 100%;
+}
+
+table th {
+  padding-left: 20px;
+}
+
+table.model_list td.user_name .company_name {
+  color: #999984;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+td.user_name p {margin-top: 5px;}
+
+table.model_list td.group_picture img {
+  border: 1px solid #86867e;
+}
+
+table.model_list td.user_name {
+  font-size: 18px;
+}
+
+table.model_list td.user_picture {
+  padding-left: 0;
+  padding-top: 6px;
+  width: 41px;
+}
+
+table.model_list td.group_picture {
+  width: 50px;
+}
+
+table td {
+  border-top: 1px solid #d7d3ce;
+  color: #59594c;
+  font-size: 14px;
+  height: 50px;
+  padding-bottom: 4px;
+  padding-left: 20px;
+  padding-top: 12px;
+  vertical-align: top;
+  width: 250px;
+}
+
+table.group_list th,
+table.model_list th {
+  background-color: #59594c;
+  color: #fff;
+  font-size: 11px;
+  padding: 0 10px 0 10px;
+  text-transform: uppercase;
+}
+
+table.releases {
+  width: 100%;
+}
+
+table.releases tr td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+table.releases tr td.release_name {
+  font-size: 14px;
+}
+
+table.releases tr td.location {
+  color: #999;
+}
+
+table.settings {
+  width: 300px;
+}
+
+table.settings tr {}
+
+table.settings tr td {
+  padding: 2px 10px;
+  vertical-align: middle;
+}
+
+table.settings tr th {
+  padding: 2px 10px;
+}
+
+table.settings tr td input {
+  display: inline;
+  vertical-align: middle;
+}

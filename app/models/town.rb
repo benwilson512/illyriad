@@ -20,6 +20,8 @@ class Town < ActiveRecord::Base
   # has_many :buildings
   belongs_to :player
   has_many :nearest_calculations
+  has_many :sieges
+  has_many :siege_forces
   
   validates_uniqueness_of :game_id
   

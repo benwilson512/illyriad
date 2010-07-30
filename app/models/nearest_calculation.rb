@@ -33,3 +33,15 @@ class NearestCalculation < Calculation
   # select p.name, a.ticker, t.pop, t.mapx, t.mapy, SQRT(POW(t.mapx)-<x center coord>,2)+POW(t.mapy-<y center coord>,2)) as range FROM towns t JOIN players p ON p.id = t.player_id LEFT JOIN alliances a ON p.alliance = a.id WHERE ticker in (<list of alliance tickers>) AND t.pop > <min pop here if you want> ORDER BY range ASC limit <max results>
   
 end
+# == Schema Information
+#
+# Table name: calculations
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(255)
+#  type        :string(255)
+#  description :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

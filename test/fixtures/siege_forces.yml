@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value
+
+
+
+# == Schema Information
+#
+# Table name: siege_forces
+#
+#  id            :integer(4)      not null, primary key
+#  siege_id      :integer(4)
+#  town_id       :integer(4)
+#  destination_x :integer(4)
+#  destination_y :integer(4)
+#  destination   :string(255)
+#  troops        :integer(4)
+#  role          :string(255)
+#  speed         :string(255)
+#  arrival_time  :datetime
+#  comments      :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+

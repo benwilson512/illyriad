@@ -21,27 +21,23 @@ class TownsController < ApplicationController
   end
   
   def show
-  end
-  
-  def near_town
-    alliance = Alliance.find params[:alliance] if params[:alliance]
-  end
-  
-  def select_as_target
-    @siege = find_siege
-    @siege.add_target(@town)
-    redirect_to towns_path
+    
   end
   
   def add_to_siege
     puts params.inspect
+    troops = params[:troops]
+    role = params[:role]
+    destination = params[:destination].split(',').first
+    x = params[:destination].split(',')[1]
+    y = params[:destination].split(',')[2]
+    speed = params[:speed]
+    puts "speed: #{speed.to_f}"
+    @town.siege_forces.create!(:siege => @siege, :troops => troops, :role => role, :destination_x => x, :destination_y => y, :speed => speed, :destination => destination)
+    redirect_to root_path
   end
   
   private
-  
-    def find_siege
-      session[:siege] ||= Siege.new
-    end
   
     def town
      @town ||= Town.find(params[:id])

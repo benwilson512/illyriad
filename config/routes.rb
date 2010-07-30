@@ -9,7 +9,6 @@ Illyriad::Application.routes.draw do |map|
       get :find
     end
     member do
-      post :select_as_target
       post :add_to_siege
     end
   end
@@ -20,6 +19,12 @@ Illyriad::Application.routes.draw do |map|
      member do
        get :options
        get :results
+     end
+   end
+   
+   resources :sieges do
+     member do
+       get :activate
      end
    end
    

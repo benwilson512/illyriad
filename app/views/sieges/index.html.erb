@@ -1,0 +1,20 @@
+<h1>Sieges</h1>
+<% if @active_siege %><h2>Active Siege: <%= @active_siege.name %></h2><% end %>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Target</th>
+        <th>Target Time</th>
+        <th>Creator </th>
+    </tr>
+<% @sieges.each do |siege| %>
+    <tr>
+        <td><%= link_to siege.name, siege_path(siege) %></td>
+        <td><%= siege.target.name %></td>
+        <td><%= siege.time %></td>
+        <td><%= siege.creator.email %></td>
+        <td><%= active_siege_or_not(siege) %>
+    </tr>
+<% end %>
+</table>

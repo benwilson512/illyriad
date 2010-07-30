@@ -1,0 +1,62 @@
+<h1><%= @siege.name%></h1>
+<h2>Target: <%= @siege.target.name %></h2>
+
+Siege Forces
+<table>
+    <tr>
+        <th>Player</th>
+        <th>Town</th>
+        <th>Troops</th>
+        <th>Speed</th>
+        <th>Comments</th>
+    </tr>
+    <%= @siege_forces.each do |force| %>
+    <tr>
+        <td><%= force.town.player.name %></td>
+        <td><%= force.town.name %></td>
+        <td><%= force.troops %></td>
+        <td><%= force.speed %></td>
+        <td><%= force.comments %></td>
+    </tr>
+    <% end %>
+</table>
+
+Clearing Forces
+<table>
+    <tr>
+        <th>Player</th>
+        <th>Town</th>
+        <th>Troops</th>
+        <th>Speed</th>
+        <th>Comments</th>
+    </tr>
+    <%= @clearing_forces.each do |force| %>
+    <tr>
+        <td><%= force.town.player.name %></td>
+        <td><%= force.town.name %></td>
+        <td><%= force.troops %></td>
+        <td><%= force.speed %></td>
+        <td><%= force.comments %></td>
+    </tr>
+    <% end %>
+</table>
+
+Reinforcements
+<table>
+    <tr>
+        <th>Player</th>
+        <th>Town</th>
+        <th>Troops</th>
+        <th>Speed</th>
+        <th>Comments</th>
+    </tr>
+    <%= @reinforcements.each do |force| %>
+    <tr>
+        <td><%= force.town.player.name %></td>
+        <td><%= force.town.name %></td>
+        <td><%= force.troops %></td>
+        <td><%= force.speed %></td>
+        <td><%= force.comments %></td>
+    </tr>
+    <% end %>
+</table>

@@ -11,6 +11,8 @@ gem "devise", '1.1.rc2'
 gem 'google_visualization'
 gem 'cucumber'
 gem 'annotate'
+
+# gem 'calendar_date_select'
 # gem 'bundler', '0.9.11'
 # gem 'will_paginate'
 
@@ -27,8 +29,8 @@ gem 'annotate'
 # Bundle the extra gems:
 # gem 'bj'
 gem 'nokogiri', '1.4.1'
-gem 'memcached-northscale'
-gem 'memcache'
+# gem 'memcached-northscale'
+# gem 'memcache'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 

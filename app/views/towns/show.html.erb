@@ -1,23 +1,25 @@
-<h1><%= @town.name %></h1><%= link_to "View in Illyriad", "http://uk1.illyriad.co.uk/view_map.asp?Radius=5&CenterX=#{@town.x}&CenterY=#{@town.y}"%>
-<p>Owner: <%= link_to(@town.player.name, player_path(@town.player)) %></p>
-<% if @town.player.alliance %><p>Alliance: <%= link_to @town.player.alliance.name, alliance_path(@town.player.alliance) %></p><% end %>
-<p>Population: <%= @town.population %></p>
-<p>Coordinates <%= "#{@town.x} | #{@town.y}" %></p>
+<h1><%= @town.name %></h1>
+<%= link_to "View in Illyriad", "http://uk1.illyriad.co.uk/view_map.asp?Radius=5&CenterX=#{@town.x}&CenterY=#{@town.y}"%>
+<ul id="town_info">
+    <li>Owner: <%= link_to(@town.player.name, player_path(@town.player)) %></li>
+    <li>Alliance: <%= @town.player.alliance.name %></li>
+    <li>Population: <%= @town.population %></li>
+    <li>Coordinates <%= "#{@town.x} | #{@town.y}" %></li>
+</ul>
 <br />
 
 <% if user_signed_in? %>
-    <%= link_to("New Calculation", options_calculation_path(Calculation.first.id, :town_id => @town.id) ) %>
+    <%= link_to("Find towns by proximity", options_calculation_path(Calculation.first.id, :town_id => @town.id) ) %>
     <br />
-    <% if @siege %>
     <br />
-        <%= form_tag :action => :add_to_siege %>
-            <p>Add to siege as </p>
-            <p><label>Siege Forces</label>     <%= radio_button_tag 'role', 'siege_forces' %></p>
-            <p><label>Reinforcements</label>   <%= radio_button_tag 'role', 'reinforce_ments' %></p>
-            <p><label>Clearing Forces</label>  <%= radio_button_tag 'role', 'clearing_forces' %></p>
-                                               <%= submit_tag "Add" %>
-        </form>
-    <% else %>
-        <%= button_to "Siege This Town", :action => :select_as_target %>
-    <% end %>
+    <%= form_tag :action => :add_to_siege %>
+        <label>Add to <u><%= @siege.name %></u> as</label><%= select_role_in_siege('Siege Forces','Reinforcements','Clearing Forces')%>
+        <label>Destination</label><%= select_siege_position(@siege.position_coordinates) %>
+        <label>Troops</label><%= text_field_tag :troops %>
+        <label>Speed</label><%= text_field_tag :speed %>
+        <%= submit_tag "Add" %>
+       
+    </form>
+    <br />
+    <%= link_to "Siege This Town", new_siege_path(:town => @town) %>
 <% end %>
