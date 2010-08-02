@@ -4,6 +4,8 @@
 <%= form_for @siege, :url => sieges_path do |f| %>
     <%= f.label(:name) %>
     <%= f.text_field(:name) %>
+    <%= f.label(:comments) %>
+    <%= f.text_area(:comments) %>
     <%= f.label(:positions, 'Define up to 8 positions ie NW,S,E,SE')%>
     <%= f.text_field(:positions)%>
     <%= f.label(:time_label) %>

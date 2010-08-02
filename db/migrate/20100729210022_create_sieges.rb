@@ -9,6 +9,7 @@ class CreateSieges < ActiveRecord::Migration
       t.time        :reinforce_time_delta
       t.time        :clearing_force_time_delta
       t.string      :roles
+      t.string      :comments
 
       t.timestamps
     end

@@ -13,6 +13,7 @@ class SiegeForce < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: siege_forces
@@ -26,7 +27,6 @@ end
 #  troops        :integer(4)
 #  role          :string(255)
 #  speed         :string(255)
-#  arrival_time  :datetime
 #  comments      :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime

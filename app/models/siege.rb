@@ -6,6 +6,16 @@ class Siege < ActiveRecord::Base
   
   validates_uniqueness_of :name
   
+  def direction_to_coordinates(direction)
+    delta_x = 0
+    delta_y = 0
+    delta_y += 1 if direction.include?('N') 
+    delta_y += -1 if direction.include?('S')
+    delta_x += 1 if direction.include?('E')
+    delta_x += -1 if direction.include?('W')
+    coordinates = {:x => self.target.x + delta_x, :y => self.target.y + delta_y}
+  end
+  
   def position_coordinates
     coordinates = []
     self.positions.delete(' ').split(',').each do |direction|
@@ -21,17 +31,22 @@ class Siege < ActiveRecord::Base
   end
   
 end
+
 # == Schema Information
 #
 # Table name: sieges
 #
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)
-#  target_id  :integer(4)
-#  time       :datetime
-#  positions  :string(255)
-#  creator_id :integer(4)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                        :integer(4)      not null, primary key
+#  name                      :string(255)
+#  target_id                 :integer(4)
+#  time                      :datetime
+#  positions                 :string(255)
+#  creator_id                :integer(4)
+#  reinforce_time_delta      :time
+#  clearing_force_time_delta :time
+#  roles                     :string(255)
+#  comments                  :string(255)
+#  created_at                :datetime
+#  updated_at                :datetime
 #
 

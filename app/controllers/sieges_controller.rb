@@ -1,6 +1,6 @@
 class SiegesController < ApplicationController
   
-  before_filter :siege, :only => [:show]
+  before_filter :siege, :except => [:index, :new, :create]
   
   def index
     @active_siege = session[:siege]
@@ -12,7 +12,6 @@ class SiegesController < ApplicationController
     @reinforcements = SiegeForce.for_siege(@siege.id).with_role('reinforcements')
     @siege_forces = SiegeForce.for_siege(@siege.id).with_role('siege_forces')
     @clearing_forces = SiegeForce.for_siege(@siege.id).with_role('clearing_forces')
-    puts params.inspect
   end
   
   def activate
@@ -47,6 +46,9 @@ class SiegesController < ApplicationController
     if @siege == session[:siege]
       session[:siege] = nil
     end
+    @siege.destroy
+    flash[:notice] = "Siege Destroyed"
+    redirect_to towns_path
   end
   
   private

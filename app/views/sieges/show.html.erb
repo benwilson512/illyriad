@@ -1,45 +1,51 @@
-<h1><%= @siege.name%></h1>
-<h2>Target: <%= @siege.target.name %></h2>
+<div id="basic-info">
+    <h1><%= @siege.name%></h1>
+    <h2>Target: <%= @siege.target.name %></h2>
+    <%= link_to "Edit Siege Properties", edit_siege_path(@siege) %>
+</div>
+<div id="siege_forces">
+    <h3>Siege Forces</h3>
+    <table id="siege_data">
+        <tr>
+            <th>Player</th>
+            <th>Town</th>
+            <th>Troops</th>
+            <th>Speed</th>
+            <th>Comments</th>
+        </tr>
+        <% @siege_forces.each do |siege_force| %>
+        <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
+        <tr id="force">
+            <td><%= siege_force.town.player.name %></td>
+            <td><%= siege_force.town.name %></td>
+            <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
+            <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+            <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
+            <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
+        </tr>
+        <% end %>
 
-Siege Forces
-<table>
+        <% end %>
+
+    </table>
+</div>
+
+<h3>Clearing Forces</h3>
+<table id="siege_data">
     <tr>
         <th>Player</th>
         <th>Town</th>
-        <th>Troops</th>
-        <th>Speed</th>
-        <th>Comments</th>
-    </tr>
-    <% @siege_forces.each do |siege_force| %>
-    <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
-    <tr id="force">
-        <td><%= siege_force.town.player.name %></td>
-        <td><%= siege_force.town.name %></td>
-        <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
-        <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
-        <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
-        <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
-    </tr>
-    <% end %>
-
-    <% end %>
-
-</table>
-
-Clearing Forces
-<table>
-    <tr>
-        <th>Player</th>
-        <th>Town</th>
+        <th>Destination</th>
         <th>Troops</th>
         <th>Speed</th>
         <th>Comments</th>
     </tr>
     <% @clearing_forces.each do |siege_force| %>
     <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
-    <tr id="force">
+    <tr id="force" class=<%= cycle('odd','even') %> >
         <td><%= siege_force.town.player.name %></td>
         <td><%= siege_force.town.name %></td>
+        <td><%= f.select(:destination, siege_force.siege.positions) %></td>
         <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
         <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
         <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
@@ -51,8 +57,8 @@ Clearing Forces
 
 </table>
 
-Reinforcements
-<table>
+<h3>Reinforcements</h3>
+<table id="siege_data">
     <tr>
         <th>Player</th>
         <th>Town</th>
@@ -62,7 +68,7 @@ Reinforcements
     </tr>
     <% @reinforcements.each do |siege_force| %>
     <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
-    <tr id="force">
+    <tr id="force" class=<%= cycle('odd','even') %> >
         <td><%= siege_force.town.player.name %></td>
         <td><%= siege_force.town.name %></td>
         <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>

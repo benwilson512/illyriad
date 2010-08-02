@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20100729214650) do
     t.time     "reinforce_time_delta"
     t.time     "clearing_force_time_delta"
     t.string   "roles"
+    t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
