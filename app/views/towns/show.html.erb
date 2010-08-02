@@ -12,7 +12,7 @@
     <%= link_to("Find towns by proximity", options_calculation_path(Calculation.first.id, :town_id => @town.id) ) %>
     <br />
     <br />
-    <%= if @siege %>
+    <% if @siege %>
     <%= form_tag :action => :add_to_siege %>
         <label>Add to <u><%= @siege.name %></u> as</label><%= select_role_in_siege('Siege Forces','Reinforcements','Clearing Forces')%>
         <label>Destination</label><%= select_siege_position(@siege.position_coordinates) %>
