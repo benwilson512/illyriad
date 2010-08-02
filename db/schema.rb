@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20100729214650) do
     t.integer  "troops"
     t.string   "role"
     t.string   "speed"
-    t.datetime "arrival_time"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -64,6 +63,9 @@ ActiveRecord::Schema.define(:version => 20100729214650) do
     t.datetime "time"
     t.string   "positions"
     t.integer  "creator_id"
+    t.time     "reinforce_time_delta"
+    t.time     "clearing_force_time_delta"
+    t.string   "roles"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -23,6 +23,7 @@ Illyriad::Application.routes.draw do |map|
    end
    
    resources :sieges do
+     resources :siege_forces
      member do
        get :activate
      end

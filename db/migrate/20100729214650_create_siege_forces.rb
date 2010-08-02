@@ -9,7 +9,6 @@ class CreateSiegeForces < ActiveRecord::Migration
       t.integer :troops
       t.string  :role
       t.string :speed
-      t.datetime :arrival_time
       t.string :comments
 
       t.timestamps

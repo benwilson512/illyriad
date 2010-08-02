@@ -7,6 +7,10 @@ class SiegeForce < ActiveRecord::Base
   scope :with_role, lambda {|role| {:conditions => {:role => role } } }
   scope :with_destination, lambda {|dest| {:conditions => {:destination => dest } } }
   # scope :closest_first, :order_by => :travel_time
+  
+  def departure_time
+    
+  end
 end
 
 # == Schema Information

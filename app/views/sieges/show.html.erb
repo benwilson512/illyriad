@@ -10,15 +10,20 @@ Siege Forces
         <th>Speed</th>
         <th>Comments</th>
     </tr>
-    <%= @siege_forces.each do |force| %>
-    <tr>
-        <td><%= force.town.player.name %></td>
-        <td><%= force.town.name %></td>
-        <td><%= force.troops %></td>
-        <td><%= force.speed %></td>
-        <td><%= force.comments %></td>
+    <% @siege_forces.each do |siege_force| %>
+    <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
+    <tr id="force">
+        <td><%= siege_force.town.player.name %></td>
+        <td><%= siege_force.town.name %></td>
+        <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
+        <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+        <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
+        <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
     </tr>
     <% end %>
+
+    <% end %>
+
 </table>
 
 Clearing Forces
@@ -30,15 +35,20 @@ Clearing Forces
         <th>Speed</th>
         <th>Comments</th>
     </tr>
-    <%= @clearing_forces.each do |force| %>
-    <tr>
-        <td><%= force.town.player.name %></td>
-        <td><%= force.town.name %></td>
-        <td><%= force.troops %></td>
-        <td><%= force.speed %></td>
-        <td><%= force.comments %></td>
+    <% @clearing_forces.each do |siege_force| %>
+    <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
+    <tr id="force">
+        <td><%= siege_force.town.player.name %></td>
+        <td><%= siege_force.town.name %></td>
+        <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
+        <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+        <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
+        <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
     </tr>
     <% end %>
+
+    <% end %>
+
 </table>
 
 Reinforcements
@@ -50,13 +60,33 @@ Reinforcements
         <th>Speed</th>
         <th>Comments</th>
     </tr>
-    <%= @reinforcements.each do |force| %>
-    <tr>
-        <td><%= force.town.player.name %></td>
-        <td><%= force.town.name %></td>
-        <td><%= force.troops %></td>
-        <td><%= force.speed %></td>
-        <td><%= force.comments %></td>
+    <% @reinforcements.each do |siege_force| %>
+    <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
+    <tr id="force">
+        <td><%= siege_force.town.player.name %></td>
+        <td><%= siege_force.town.name %></td>
+        <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
+        <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+        <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
+        <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
     </tr>
     <% end %>
+
+    <% end %>
+
 </table>
+
+<script>
+$("a#update_info").click( function() {
+    value = $(this).attr("value");
+  $.ajax({
+        type: "POST",
+        url: "/sieges/<%= params[:id] %>/siege_forces/"+value,
+        data: $("#edit_siege_force_"+value).serializeArray(),
+        dataType: "json",
+      success: function(){
+          $("tr#force").show().effect("highlight", {}, 3000).fadeOut(1000);
+    }
+  });
+});
+</script>

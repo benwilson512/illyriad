@@ -6,6 +6,9 @@ class CreateSieges < ActiveRecord::Migration
       t.datetime    :time
       t.string      :positions
       t.integer     :creator_id
+      t.time        :reinforce_time_delta
+      t.time        :clearing_force_time_delta
+      t.string      :roles
 
       t.timestamps
     end

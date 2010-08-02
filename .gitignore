@@ -4,3 +4,6 @@ log/*.log
 tmp/**/*
 Gemfile.lock
 xml_blobs/*
+vendor/
+.idea/
+.rvmrc
