@@ -6,8 +6,8 @@ class CreateSieges < ActiveRecord::Migration
       t.datetime    :time
       t.string      :positions
       t.integer     :creator_id
-      t.time        :reinforce_time_delta
-      t.time        :clearing_force_time_delta
+      t.integer     :reinforce_time_delta, :default => 0
+      t.integer     :clearing_force_time_delta, :default => 0
       t.string      :roles
       t.string      :comments
 

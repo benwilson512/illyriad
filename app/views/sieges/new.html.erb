@@ -10,6 +10,10 @@
     <%= f.text_field(:positions)%>
     <%= f.label(:time_label) %>
     <%= f.text_field(:time) %>
+    <%= f.label("Reinforcements Time Delta (seconds, positive number)") %>
+    <%= f.text_field(:reinforce_time_delta) %>
+    <%= f.label("Clearing Forces Time Delta (seconds, positive number)") %>
+    <%= f.text_field(:clearing_force_time_delta) %>
     <%= f.hidden_field(:target_id) %>
     <%= f.submit(:submit) %>
     

@@ -80,7 +80,7 @@ table tr.even td {}
 
 
 table {
-  width: 100%;
+  width: 60%;
 }
 
 table.siege_data {
@@ -88,6 +88,7 @@ table.siege_data {
 }
 
 table th {
+  text-align: left;
   padding-left: 20px;
 }
 

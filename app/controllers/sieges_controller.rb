@@ -10,8 +10,10 @@ class SiegesController < ApplicationController
   def show
     @target = @siege.target
     @reinforcements = SiegeForce.for_siege(@siege.id).with_role('reinforcements')
+    @arrival_times[:reinforcements] = @siege.time + @siege.reinforce_time_delta
     @siege_forces = SiegeForce.for_siege(@siege.id).with_role('siege_forces')
     @clearing_forces = SiegeForce.for_siege(@siege.id).with_role('clearing_forces')
+    @arrival_times[:clearing_forces] = @siege.time - @siege.clearing_force_time_delta
   end
   
   def activate

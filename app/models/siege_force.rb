@@ -8,8 +8,12 @@ class SiegeForce < ActiveRecord::Base
   scope :with_destination, lambda {|dest| {:conditions => {:destination => dest } } }
   # scope :closest_first, :order_by => :travel_time
   
-  def departure_time
-    
+  def departure_time(arrival_time)
+    departure_time = arrival_time - travel_time.hours
+  end
+  
+  def travel_time
+    self.town.distance_from(self.destination_x,self.destination_y)/self.speed.to_f
   end
 end
 
