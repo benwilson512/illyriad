@@ -1,6 +1,6 @@
 class SiegesController < ApplicationController
   
-  before_filter :siege, :except => [:index, :new, :create]
+  before_filter :siege, :except => [:index, :new, :create, :update]
   
   def index
     @active_siege = session[:siege]
@@ -9,11 +9,18 @@ class SiegesController < ApplicationController
   
   def show
     @target = @siege.target
+    @arrival_times = {}
     @reinforcements = SiegeForce.for_siege(@siege.id).with_role('reinforcements')
     @arrival_times[:reinforcements] = @siege.time + @siege.reinforce_time_delta
     @siege_forces = SiegeForce.for_siege(@siege.id).with_role('siege_forces')
     @clearing_forces = SiegeForce.for_siege(@siege.id).with_role('clearing_forces')
     @arrival_times[:clearing_forces] = @siege.time - @siege.clearing_force_time_delta
+  end
+  
+  def update
+    @siege = Siege.new(params[:siege])
+    @siege.save
+    redirect_to siege_path(@siege) 
   end
   
   def activate
@@ -42,15 +49,6 @@ class SiegesController < ApplicationController
       flash[:error] = "There was an error, go yell at Larry"
       redirect_to root_path
     end
-  end
-  
-  def destroy
-    if @siege == session[:siege]
-      session[:siege] = nil
-    end
-    @siege.destroy
-    flash[:notice] = "Siege Destroyed"
-    redirect_to towns_path
   end
   
   private

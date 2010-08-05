@@ -8,6 +8,7 @@ class SiegeTest < ActiveSupport::TestCase
 end
 
 
+
 # == Schema Information
 #
 # Table name: sieges
@@ -18,8 +19,8 @@ end
 #  time                      :datetime
 #  positions                 :string(255)
 #  creator_id                :integer(4)
-#  reinforce_time_delta      :time
-#  clearing_force_time_delta :time
+#  reinforce_time_delta      :integer(4)      default(0)
+#  clearing_force_time_delta :integer(4)      default(0)
 #  roles                     :string(255)
 #  comments                  :string(255)
 #  created_at                :datetime

@@ -13,7 +13,10 @@ class Siege < ActiveRecord::Base
     delta_y += -1 if direction.include?('S')
     delta_x += 1 if direction.include?('E')
     delta_x += -1 if direction.include?('W')
+    puts direction
     coordinates = {:x => self.target.x + delta_x, :y => self.target.y + delta_y}
+    puts coordinates.inspect
+    coordinates
   end
   
   def position_coordinates
@@ -32,6 +35,7 @@ class Siege < ActiveRecord::Base
   
 end
 
+
 # == Schema Information
 #
 # Table name: sieges
@@ -42,8 +46,8 @@ end
 #  time                      :datetime
 #  positions                 :string(255)
 #  creator_id                :integer(4)
-#  reinforce_time_delta      :time
-#  clearing_force_time_delta :time
+#  reinforce_time_delta      :integer(4)      default(0)
+#  clearing_force_time_delta :integer(4)      default(0)
 #  roles                     :string(255)
 #  comments                  :string(255)
 #  created_at                :datetime

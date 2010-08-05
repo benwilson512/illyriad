@@ -2,15 +2,15 @@
 <% unless @report_items.blank? %>
 <h1>Target</h1>
 <h2><%= @town.name %></h2>
-Population <%= @town.population %>
-<%= @report_items.size %> valid results for town: <b><%= @town.name %></b>
+<p>Population <%= @town.population %></p>
+<p><%= @report_items.size %> valid results for town: <b><%= @town.name %></b></p>
   <table>
     <tr>
       <th>Town Name</th>
       <th>Town Owner</th>
       <th>Population</th>
       <th>Alliance</th>
-      <th>Time (speed <%= @speed %>) </th>
+      <th>Time (speed <%= @speed %>)</th>
       <th>Siege Time</th>
     </tr>
   <% @report_items.each do |report_item| %>

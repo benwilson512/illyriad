@@ -2,6 +2,7 @@ class SiegeForce < ActiveRecord::Base
   
   belongs_to :siege
   belongs_to :town
+  before_save :check_destination_coordinates
   
   scope :for_siege, lambda {|siege_id| {:conditions => {:siege_id => siege_id } } }
   scope :with_role, lambda {|role| {:conditions => {:role => role } } }
@@ -14,6 +15,17 @@ class SiegeForce < ActiveRecord::Base
   
   def travel_time
     self.town.distance_from(self.destination_x,self.destination_y)/self.speed.to_f
+  end
+  
+  private
+  
+  def check_destination_coordinates
+    if self.destination_changed?
+      coordinates = self.siege.direction_to_coordinates(self.destination)
+      self.destination_x = coordinates[:x]
+      self.destination_y = coordinates[:y]
+      return true
+    end
   end
 end
 

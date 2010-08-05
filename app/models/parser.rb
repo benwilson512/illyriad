@@ -46,32 +46,56 @@ class Parser
     
     puts "Creating Alliances"
     alliances.each do |alliance|
-      Alliance.create(:game_id => alliance[:game_id], 
-                      :name => alliance[:name], 
-                      :ticker => alliance[:ticker])
+      existing_alliance = Alliance.find_by_game_id(alliance[:game_id])
+      if existing_alliance
+        existing_alliance.update_attributes(:name => alliance[:name], 
+                                            :ticker => alliance[:ticker])
+      else
+        Alliance.create(:game_id => alliance[:game_id], 
+                        :name => alliance[:name], 
+                        :ticker => alliance[:ticker])
+      end
     end
     
     puts "Creating Players"
     players.each do |player|
+      existing_player = Player.find_by_game_id(player[:game_id])
       alliance = Alliance.find_by_game_id(player[:alliance_game_id])
       alliance ? alliance_id = alliance.id : Alliance.find_by_game_id(-1).id
-      Player.create(:name => player[:name], 
-                    :game_id => player[:game_id], 
-                    :race => player[:race], 
-                    :alliance_id => alliance_id)
+      if existing_player
+        existing_player.update_attributes(:name => player[:name], 
+                      :race => player[:race], 
+                      :alliance_id => alliance_id)
+      else
+        Player.create(:name => player[:name], 
+                      :game_id => player[:game_id], 
+                      :race => player[:race], 
+                      :alliance_id => alliance_id)
+      end
     end
     
     puts "Creating Towns"
     towns.each do |town|
       player_id = Player.find_by_game_id(town[:player_game_id]).id
-      Town.create(:x => town[:mapx], 
-                  :y => town[:mapy], 
-                  :name => town[:name], 
-                  :population => town[:population], 
-                  :capital => town[:capital], 
-                  :alliance_capital => town[:alliance_capital], 
-                  :game_id => town[:game_id], 
-                  :player_id => player_id)
+      existing_town = Town.find_by_game_id(town[:game_id])
+      if existing_town
+        existing_town.update_attributes(:x => town[:mapx], 
+                    :y => town[:mapy], 
+                    :name => town[:name], 
+                    :population => town[:population], 
+                    :capital => town[:capital], 
+                    :alliance_capital => town[:alliance_capital],  
+                    :player_id => player_id)
+      else
+        Town.create(:x => town[:mapx], 
+                    :y => town[:mapy], 
+                    :name => town[:name], 
+                    :population => town[:population], 
+                    :capital => town[:capital], 
+                    :alliance_capital => town[:alliance_capital], 
+                    :game_id => town[:game_id], 
+                    :player_id => player_id)
+      end
     end
     
   end

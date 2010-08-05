@@ -1,0 +1,19 @@
+<h1>Editing <%= @siege.name %></h1>
+
+<%= form_for @siege, :url => siege_path(@siege), :method => :put do |f| %>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+    <%= f.label(:comments) %>
+    <%= f.text_area(:comments) %>
+    <%= f.label(:positions, 'Define up to 8 positions ie NW,S,E,SE')%>
+    <%= f.text_field(:positions)%>
+    <%= f.label(:time_label) %>
+    <%= f.text_field(:time) %>
+    <%= f.label("Reinforcements Time Delta (seconds, positive number)") %>
+    <%= f.text_field(:reinforce_time_delta) %>
+    <%= f.label("Clearing Forces Time Delta (seconds, positive number)") %>
+    <%= f.text_field(:clearing_force_time_delta) %>
+    <%= f.hidden_field(:target_id) %>
+    <%= f.submit(:update) %>
+    
+<% end %>

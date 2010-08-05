@@ -80,7 +80,7 @@ table tr.even td {}
 
 
 table {
-  width: 60%;
+  width: 100%;
 }
 
 table.siege_data {
@@ -127,4 +127,8 @@ table td {
   padding-top: 12px;
   vertical-align: top;
   width: 250px;
+}
+
+table td.time {
+	width: 600px;
 }

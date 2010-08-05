@@ -9,18 +9,24 @@
         <tr>
             <th>Player</th>
             <th>Town</th>
+            <th>Destination</th>
             <th>Troops</th>
             <th>Speed</th>
             <th>Comments</th>
+            <th>Travel Time</th>
+            <th>Departure Time</th>
         </tr>
         <% @siege_forces.each do |siege_force| %>
         <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
         <tr id="force">
             <td><%= siege_force.town.player.name %></td>
             <td><%= siege_force.town.name %></td>
-            <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
-            <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+            <td><%= f.select(:destination, siege_force.siege.positions.delete(' ').split(','), :selected => siege_force.destination ) %></td>
+            <td><%= f.text_field(:troops, :value => siege_force.troops, :size => 4) %></td>
+            <td><%= f.text_field(:speed, :value => siege_force.speed, :size => 4) %></td>
             <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
+            <td><%= siege_force.travel_time %></td>
+            <td class="time"><%= siege_force.departure_time(@arrival_times[:clearing_forces]) %></td>
             <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
         </tr>
         <% end %>
@@ -47,12 +53,12 @@
     <tr id="force" class=<%= cycle('odd','even') %> >
         <td><%= siege_force.town.player.name %></td>
         <td><%= siege_force.town.name %></td>
-        <td><%= f.select(:destination, siege_force.siege.positions) %></td>
-        <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
-        <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+        <td><%= f.select(:destination, siege_force.siege.positions.delete(' ').split(','), :selected => siege_force.destination ) %></td>
+        <td><%= f.text_field(:troops, :value => siege_force.troops, :size => 4) %></td>
+        <td><%= f.text_field(:speed, :value => siege_force.speed, :size => 4) %></td>
         <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
         <td><%= siege_force.travel_time %></td>
-        <td><%= siege_force.departure_time(@arrival_times[:clearing_forces]) %></td>
+        <td class="time"><%= siege_force.departure_time(@arrival_times[:clearing_forces]) %></td>
         <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
     </tr>
     <% end %>
@@ -66,18 +72,24 @@
     <tr>
         <th>Player</th>
         <th>Town</th>
+        <th>Destination</th>
         <th>Troops</th>
         <th>Speed</th>
         <th>Comments</th>
+        <th>Travel Time</th>
+        <th>Departure Time</th>
     </tr>
     <% @reinforcements.each do |siege_force| %>
     <%= form_for(siege_force, :url => siege_siege_forces_url(@siege, siege_force)) do |f| %>
     <tr id="force" class=<%= cycle('odd','even') %> >
         <td><%= siege_force.town.player.name %></td>
         <td><%= siege_force.town.name %></td>
-        <td><%= f.text_field(:troops, :value => siege_force.troops) %></td>
-        <td><%= f.text_field(:speed, :value => siege_force.speed) %></td>
+        <td><%= f.select(:destination, siege_force.siege.positions.delete(' ').split(','), :selected => siege_force.destination ) %></td>
+        <td><%= f.text_field(:troops, :value => siege_force.troops, :size => 4) %></td>
+        <td><%= f.text_field(:speed, :value => siege_force.speed, :size => 4) %></td>
         <td><%= f.text_field(:comments, :value => siege_force.comments) %></td>
+        <td><%= siege_force.travel_time %></td>
+        <td class="time"><%= siege_force.departure_time(@arrival_times[:clearing_forces]) %></td>
         <td><%= link_to "Update", "", :id => "update_info", :value => siege_force.id %></td>
     </tr>
     <% end %>
