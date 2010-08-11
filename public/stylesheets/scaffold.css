@@ -87,6 +87,10 @@ table.siege_data {
   width: 100%;
 }
 
+table.distance_results {
+	width: 100%;
+}
+
 table th {
   text-align: left;
   padding-left: 20px;

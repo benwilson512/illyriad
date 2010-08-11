@@ -29,7 +29,7 @@ Illyriad::Application.routes.draw do |map|
      end
    end
    
-   LETS BREAK SHIT
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

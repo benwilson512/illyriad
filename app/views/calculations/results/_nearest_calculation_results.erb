@@ -4,7 +4,7 @@
 <h2><%= @town.name %></h2>
 <p>Population <%= @town.population %></p>
 <p><%= @report_items.size %> valid results for town: <b><%= @town.name %></b></p>
-  <table>
+  <table id="distance_results">
     <tr>
       <th>Town Name</th>
       <th>Town Owner</th>
@@ -30,7 +30,7 @@ BB Code: <%=raw clippy get_bbcode(@report_items, @report_items.first[:speed] )%>
 <% end %>
 <% unless @reinforcements.blank? %>
 <h2>Reinforcements</h2>
-<table>
+<table id="distance_results">
   <tr>
     <th>Town Name</th>
     <th>Town Owner</th>
