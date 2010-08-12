@@ -20,10 +20,12 @@ Select Owner
 X: <%= text_field_tag :x_field %>
 Y: <%= text_field_tag :y_field %>
 <%= hidden_field_tag :search_type, "coordinates" %>
-<h2>By Name</h2>
+<%= submit_tag "search" %>
 </form>
+<h2>By Name</h2>
 <%= form_tag towns_path, :method => :get %>
 Name: <%= text_field_tag :town_name %>
 <%= hidden_field_tag :search_type, "name" %>
+<%= submit_tag "search" %>
 </form>
 <% end %>

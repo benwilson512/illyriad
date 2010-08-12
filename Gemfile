@@ -11,6 +11,7 @@ gem "devise", '1.1.rc2'
 gem 'google_visualization'
 gem 'cucumber'
 gem 'annotate'
+gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
 
 # gem 'calendar_date_select'
 # gem 'bundler', '0.9.11'

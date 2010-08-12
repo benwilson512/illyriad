@@ -136,3 +136,53 @@ table td {
 table td.time {
 	width: 600px;
 }
+
+/* Notices */
+
+.flash {
+  line-height: 1.6em;
+  margin: 0 auto 20px;
+  padding: 1.6em 1.6em 1em 1.6em;
+  background-position: 10px 7px;
+  background-repeat: no-repeat;
+}
+
+.news {
+  background-color:  #fefada;
+  border: 1px solid #FFD324;  
+}
+
+.dismiss-alert {
+  float: right;
+  margin-top: 0em;
+  margin-right: 0em;
+}
+
+.normal {
+  background-color:  #fff6bf;
+  background-image: url("/images/icon_alert_32.gif");
+  border: 1px solid #FFD324;
+  padding-left: 50px;
+}
+
+.notice {
+  background-color:  #ccffcc;
+  background-image: url("/images/icon_check_32.gif");
+  border: 1px solid #009900;
+  padding-left: 50px;
+}
+
+.error {
+  background-color:  #ffcccc;
+  background-image: url("/images/icon_close_32.gif");
+  border: 1px solid #990000;
+  padding-left: 50px;
+}
+
+.notice h2 {
+  color: #59594C;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 0 0;
+  padding: 0;
+}

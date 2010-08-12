@@ -12,11 +12,16 @@ class TownsController < ApplicationController
     when "name"
       name = params[:town_name]
       @town = Town.by_name name
+      @town = @town.first if @town.size == 1
     end
-    if @town.class == Town
-      redirect_to town_path(@town)
+    if !@town.blank?
+      if @town.class == Town
+        redirect_to town_path(@town)
+      else
+        @towns = @town
+      end
     else
-      @towns = @town
+      flash[:error] = "No towns found with that name"
     end
   end
   
