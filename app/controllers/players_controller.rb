@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
     @player = Player.find_by_name(params[:player_name])
     if @player
       redirect_to player_path(@player)
-    else
+    elsif params[:search_type]
       flash[:error] = "Could not find a player with that exact name"
     end
   end
