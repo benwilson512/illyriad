@@ -5,4 +5,5 @@
 <%= form_tag players_path, :method => :get %>
 Name: <%= text_field_tag :player_name %>
 <%= hidden_field_tag :search_type, "name" %>
+<%= submit_tag "Submit"%>
 </form>
