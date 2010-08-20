@@ -18,11 +18,11 @@ class NearestCalculation < Calculation
         end
       end
     else
-      Town.within_square_area(town,max_distance).each do |this_town|
-        distance = town.distance_from(this_town.x, this_town.y)
-        time = distance / speed
-        if time < max_time && this_town != town
-          @items << {:distance => distance, :time => time, :town => this_town}
+      Town.within_square_area(input_town,max_distance).each do |this_town|
+        distance = input_town.distance_from(this_town.x, this_town.y)
+        this_time = distance / input_speed
+        if this_time < input_time && this_town != input_town
+          @items << {:distance => distance, :time => this_time, :town => this_town}
         end
       end
     end
