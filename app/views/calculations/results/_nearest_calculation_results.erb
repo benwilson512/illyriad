@@ -22,7 +22,6 @@
       <td><%= format_time(report_item[:time]) %></td>
       <td><%= format_siege_time report_item[:distance] %></td>
 	  <td><%= link_to "view", "http://uk1.illyriad.co.uk/view_map.asp?Radius=5&CenterX=#{report_item[:town].x}&CenterY=#{report_item[:town].y}"%></td>
-      <td><%= link_to "calculate", "http://illyriad-data.heroku.com/calculations/1/results?time=12&speed=5&alliances=Harmless%3F&max_results=&calculation_type=NearestCalculation&town_id=#{report_item[:town].id}&commit=submit" %>
     </tr>
   <% end %>
 </table>
