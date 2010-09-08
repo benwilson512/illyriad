@@ -25,7 +25,8 @@
     </tr>
   <% end %>
 </table>
-BB Code: <%=raw clippy get_bbcode(@report_items, @report_items.first[:speed] )%>
+BB Code: <%=raw clippy get_bbcode(@report_items, @report_items.first[:speed] ) %>
+HTML Version: <%=raw clippy get_html(@report_items, @report_items.first[:speed] )%>
 <% end %>
 <% unless @reinforcements.blank? %>
 <h2>Reinforcements</h2>
