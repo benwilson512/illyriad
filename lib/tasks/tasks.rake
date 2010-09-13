@@ -1,11 +1,8 @@
 require File.expand_path('../../seed_data_loader', __FILE__)
+require 'benchmark'
 
 task :parse  => :environment do
-  puts starttime = Time.now
-  Parser.parse!
-  puts endtime = Time.now
-  puts finaltime = endtime - starttime
-  puts "Completed"
+  puts Benchmark.measure {Parser.parse!}
 end
 
 task :load_seed_data => :environment do
