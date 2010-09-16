@@ -6,9 +6,9 @@ class StatisticsController < ApplicationController
     # @median = median_distance(@towns)
     # @mean = mean_distance(@towns)
     # @mode = mode(@towns)
-    @median = 260
-    @mean = 274
-    @large_towns = Town.population_greater_than(1000).size
+    # @median = 260
+    # @mean = 274
+    # @large_towns = Town.population_greater_than(1000).size
     
   end
   
