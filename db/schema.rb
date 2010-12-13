@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100729214650) do
+ActiveRecord::Schema.define(:version => 20101007225433) do
 
   create_table "alliances", :force => true do |t|
     t.integer  "game_id"
@@ -17,6 +17,12 @@ ActiveRecord::Schema.define(:version => 20100729214650) do
     t.string   "ticker"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "founder_id"
+    t.integer  "capital_id"
+    t.datetime "founded"
+    t.float    "tax_rate"
+    t.datetime "set_tax_date"
+    t.integer  "total_population"
   end
 
   create_table "calculations", :force => true do |t|
@@ -39,6 +45,16 @@ ActiveRecord::Schema.define(:version => 20100729214650) do
     t.integer  "game_id"
     t.string   "race"
     t.integer  "alliance_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relationships", :force => true do |t|
+    t.string   "type"
+    t.integer  "game_id"
+    t.datetime "established"
+    t.integer  "proposer_id"
+    t.integer  "acceptor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

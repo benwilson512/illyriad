@@ -1,0 +1,1 @@
+curl http://uk1.illyriad.co.uk/data_downloads/datafile_towns.xml -o ./xml_blobs/datafile_towns.xml

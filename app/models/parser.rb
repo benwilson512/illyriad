@@ -4,7 +4,7 @@ require 'open-uri'
 
 class Parser
   
-  def self.parse!
+  def self.parse_towns!
     alliances = []
     players = []
     towns = []
@@ -61,7 +61,7 @@ class Parser
     players.each do |player|
       existing_player = Player.find_by_game_id(player[:game_id])
       alliance = Alliance.find_by_game_id(player[:alliance_game_id])
-      alliance ? alliance_id = alliance.id : Alliance.find_by_game_id(-1).id
+      alliance ? alliance_id = alliance.id : alliance_id = Alliance.find_by_game_id(-1).id
       if existing_player
         existing_player.update_attributes(:name => player[:name], 
                       :race => player[:race], 
@@ -97,7 +97,52 @@ class Parser
                     :player_id => player_id)
       end
     end
+    nil
+  end
+  
+  def self.parse_alliances!
+    # puts `cat ./xml_blobs/datafile_alliances.xml`.split("<")
+    relationships = []
+    alliances = []
+    doc = Nokogiri::XML(File.open("#{Rails.root}/xml_blobs/datafile_alliances.xml"))
+    doc.xpath("alliancedata/alliances/alliance").each do |alliance|
+      tmp_alliance = {}
+      tmp_alliance[:game_id] = alliance.xpath("alliance").attribute("id").value.to_i
+      tmp_alliance[:name] = alliance.xpath("alliance").text
+      tmp_alliance[:founder_game_id] = alliance.xpath("foundedbyplayerid").attribute("id").value.to_i
+      tmp_alliance[:capital_game_id] = alliance.xpath("alliancecapitaltownid").attribute("id").value.to_i
+      tmp_alliance[:ticker] = alliance.xpath("allianceticker").text
+      tmp_alliance[:founded] = alliance.xpath("foundeddatetime").text
+      tmp_alliance[:tax_rate] = alliance.xpath("alliancetaxrate").text
+      tmp_alliance[:tax_set_date] = alliance.xpath("alliancetaxratelastchanged").text
+      tmp_alliance[:total_population] = alliance.xpath("totalpopulation").text
+      alliance.xpath("relationships/relationship").each do |relationship|
+        tmp_relationship = {}
+        tmp_relationship[:proposed_by_game_id] = relationship.xpath("proposedbyalliance").attribute("id").value.to_i
+        tmp_relationship[:accepted_by_game_id] = relationship.xpath("acceptedbyalliance").attribute("id").value.to_i
+        tmp_relationship[:type_id] = relationship.xpath("relationshiptype").attribute("id").value.to_i
+        tmp_relationship[:established] = relationship.xpath("establishedsince").text
+        
+        relationships << tmp_relationship
+      end
+      alliances << tmp_alliance
+    end
     
+    alliances.each do |alliance|
+      existing_alliance = Alliance.find_by_game_id(alliance[:game_id])
+      if existing_alliance
+        existing_alliance.update_attributes(:name => alliance[:names],
+                                            :ticker => alliance[:ticker],
+                                            :founded => alliance[:founded],
+                                            :tax_rate => alliance[:tax_rate],
+                                            :total_population => alliance[:total_population])
+                                          end
+      
+    end
+    
+    puts alliances.size
+    puts relationships.size
+    nil
   end
   
   # def create_smaller_sample

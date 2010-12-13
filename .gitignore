@@ -7,3 +7,5 @@ xml_blobs/*
 vendor/
 .idea/
 .rvmrc
+config/database.yml
+

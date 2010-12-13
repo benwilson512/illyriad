@@ -28,6 +28,7 @@ class Town < ActiveRecord::Base
   scope :at_coordinates, lambda { |x,y| {:conditions => {:x => x, :y => y } } }
   scope :by_name, lambda { |name| {:conditions => { :name => name } } }
   scope :population_greater_than, lambda { |population| {:conditions => ["population >= #{population}"] } }
+  scope :population_less_than, lambda { |population| {:conditions => ["population <= #{population}"] } }
   scope :x_greater_than, lambda { |x_value| {:conditions => ["x >= #{x_value}"] } }
   scope :x_less_than, lambda { |x_value| {:conditions => ["x <= #{x_value}"] } }
   scope :y_greater_than, lambda { |y_value| {:conditions => ["y >= #{y_value}"] } }
@@ -55,8 +56,8 @@ class Town < ActiveRecord::Base
     sorted = reinforcements.sort_by { |item| item[:time] }
   end
   
-  def distance_from(test_x,test_y)
-    Math.sqrt((self.x-test_x)**2 + (self.y-test_y)**2)
+  def distance_from(x,y)
+    Math.sqrt((self.x-x)**2 + (self.y-y)**2)
   end
   
   def location
