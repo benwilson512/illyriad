@@ -18,6 +18,10 @@
 
 class Alliance < ActiveRecord::Base
   
+  cattr_reader :per_page
+  
+  @@per_page = 10
+  
   has_many :players
   
   validates_uniqueness_of :game_id

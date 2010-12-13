@@ -18,8 +18,8 @@ class Parser
       town.children.each do |node|
         case node.name
         when "location"
-          tmp_town[:mapx] = node.xpath("mapx").text
-          tmp_town[:mapy] = node.xpath("mapy").text
+          tmp_town[:mapx] = node.xpath("mapx").text.to_i
+          tmp_town[:mapy] = node.xpath("mapy").text.to_i
         when "player"
           tmp_player[:game_id] = node.xpath("playername").attribute("id").value.to_i
           tmp_player[:name] = node.xpath("playername").text
@@ -31,77 +31,89 @@ class Parser
             tmp_player[:alliance_game_id] = tmp_alliance[:game_id]
             alliances << tmp_alliance
           end
+          tmp_player[:alliance_game_id] = 0 unless tmp_player[:alliance_game_id]
           players << tmp_player
         when "towndata"
           tmp_town[:game_id] = node.xpath("townname").attribute("id").value.to_i
           tmp_town[:name] = node.xpath("townname").text
           tmp_town[:population] = node.xpath("population").text
-          tmp_town[:capital] = node.xpath("iscapital").text
-          tmp_town[:alliance_capital] = node.xpath("isalliancecapital").text
+          tmp_town[:capital] = node.xpath("iscapital").text == "true" ? 1 : 0
+          tmp_town[:alliance_capital] = node.xpath("isalliancecapital").text == "true" ? 1 : 0
           tmp_town[:player_game_id] = tmp_player[:game_id]
           towns << tmp_town
         end
       end
     end
     
-    puts "Creating Alliances"
+    sql = ActiveRecord::Base.connection()
+    
+    time = Time.now
+    
+    puts "Creating Alliances..."
     alliances.each do |alliance|
-      existing_alliance = Alliance.find_by_game_id(alliance[:game_id])
-      if existing_alliance
-        existing_alliance.update_attributes(:name => alliance[:name], 
-                                            :ticker => alliance[:ticker])
-      else
-        Alliance.create(:game_id => alliance[:game_id], 
-                        :name => alliance[:name], 
-                        :ticker => alliance[:ticker])
-      end
+      sql.execute "INSERT IGNORE
+        INTO alliances (
+          id,
+          name,
+          ticker,
+          created_at)
+        VALUES (
+          %i,
+          \"%s\",
+          \"%s\",
+          '%s' )".strip.delete("\n") %[alliance[:game_id], strip_tags(alliance[:name]), strip_tags(alliance[:ticker]), time]
     end
     
-    puts "Creating Players"
+    puts "Creating Players..."
     players.each do |player|
-      existing_player = Player.find_by_game_id(player[:game_id])
-      alliance = Alliance.find_by_game_id(player[:alliance_game_id])
-      alliance ? alliance_id = alliance.id : alliance_id = Alliance.find_by_game_id(-1).id
-      if existing_player
-        existing_player.update_attributes(:name => player[:name], 
-                      :race => player[:race], 
-                      :alliance_id => alliance_id)
-      else
-        Player.create(:name => player[:name], 
-                      :game_id => player[:game_id], 
-                      :race => player[:race], 
-                      :alliance_id => alliance_id)
-      end
+      sql.execute "INSERT IGNORE
+        INTO players (
+          id,
+          name,
+          race,
+          alliance_id,
+          created_at)
+        VALUES (
+          %i,
+          \"%s\",
+          \"%s\",
+          %i,
+          '%s' )".strip.delete("\n") %[player[:game_id], strip_tags(player[:name]), player[:race], player[:alliance_game_id], time]
     end
     
-    puts "Creating Towns"
+    puts "Creating Towns..."
     towns.each do |town|
-      player_id = Player.find_by_game_id(town[:player_game_id]).id
-      existing_town = Town.find_by_game_id(town[:game_id])
-      if existing_town
-        existing_town.update_attributes(:x => town[:mapx], 
-                    :y => town[:mapy], 
-                    :name => town[:name], 
-                    :population => town[:population], 
-                    :capital => town[:capital], 
-                    :alliance_capital => town[:alliance_capital],  
-                    :player_id => player_id)
-      else
-        Town.create(:x => town[:mapx], 
-                    :y => town[:mapy], 
-                    :name => town[:name], 
-                    :population => town[:population], 
-                    :capital => town[:capital], 
-                    :alliance_capital => town[:alliance_capital], 
-                    :game_id => town[:game_id], 
-                    :player_id => player_id)
-      end
+      sql.execute ("INSERT IGNORE INTO towns (
+          alliance_capital,
+          capital,
+          created_at, 
+          id,
+          name, 
+          player_id, 
+          population, 
+          x,
+          y) 
+        VALUES (
+          %i, 
+          %i,
+          '%s', 
+          %i,
+          \"%s\",
+          %i,
+          %i,
+          %i,
+          %i)".strip.delete("\n") %[town[:alliance_capital], town[:capital], time, town[:game_id], strip_tags(town[:name]), town[:player_game_id], town[:population], town[:mapx], town[:mapy]])
+          
     end
-    nil
+    
+  end
+  
+  def self.strip_tags(string)
+    string.gsub(/\\/, '\&\&').gsub(/'/, "''")
   end
   
   def self.parse_alliances!
-    # puts `cat ./xml_blobs/datafile_alliances.xml`.split("<")
+    # puts cat ./xml_blobs/datafile_alliances.xml.split("<")
     relationships = []
     alliances = []
     doc = Nokogiri::XML(File.open("#{Rails.root}/xml_blobs/datafile_alliances.xml"))
@@ -130,8 +142,14 @@ class Parser
     
     alliances.each do |alliance|
       existing_alliance = Alliance.find_by_game_id(alliance[:game_id])
+      puts existing_alliance.inspect
+      puts "========="
+      puts alliance.inspect
+      puts "=============="
       if existing_alliance
-        existing_alliance.update_attributes(:name => alliance[:names],
+        existing_alliance.update_attributes(:name => alliance[:name],
+                                            :founder_id => Player.find_by_game_id(alliance[:founder_game_id]).id,
+                                            :capital_id => Town.find_by_game_id(alliance[:capital_game_id]).id,
                                             :ticker => alliance[:ticker],
                                             :founded => alliance[:founded],
                                             :tax_rate => alliance[:tax_rate],

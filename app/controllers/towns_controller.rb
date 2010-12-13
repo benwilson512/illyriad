@@ -1,6 +1,6 @@
 class TownsController < ApplicationController
   
-  before_filter :town, :except => [:index, :find]
+  before_filter :town, :except => [:index, :find, :new, :create]
   before_filter :siege
   
   def index
@@ -27,6 +27,15 @@ class TownsController < ApplicationController
   
   def show
     
+  end
+  
+  def new
+    @town = Town.new
+  end
+  
+  def create
+    @town = Town.new(params[:town])
+    @town.save!
   end
   
   def add_to_siege
