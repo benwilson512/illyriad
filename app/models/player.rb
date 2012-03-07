@@ -22,7 +22,9 @@ class Player < ActiveRecord::Base
   scope :of_race, lambda { |race| {:conditions => { :race => race } } }
   
   def population
-    total_pop = self.towns.each { |town| total_pop + town.population }
+    total_pop = 0
+    self.towns.each { |town| total_pop += town.population }
+    return total_pop
   end
   
 end
